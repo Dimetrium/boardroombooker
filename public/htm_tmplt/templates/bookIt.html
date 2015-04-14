@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <title></title>
+        <meta name="" content="">
+       <script type="text/javascript" src="/~user12/booker/lib/js/bookIt.js"></script>
+    </head>
+    <body onload="addEvent()">
+        <form action= "/~user12/booker/index.php/order/create"  method="POST"> 
+        <!-- /~user12/booker/index.php/order/create-->
+        <div id="error" style="color:red;font:20px/30px Tahoma, sans-serif; " >{error}</div>   
+        <p>1. Booked for:</p>
+        <div>{listEmployees}</div> 
+        <p>2. I would like too book this meeting:</p>
+        <div>{listMonths}<span id='positionList'></span><select name="listYears"><option value="2013">2013</option></select></div>   
+        <p>3. Specify what the time and end of the meeting(This will be what people see on the calendar. )</p>  
+        <select name= 'startHour'>
+            <option value='8'>8</option>
+            <option value='9'>9</option>
+            <option value='10'>10</option>
+            <option value='11'>11</option>
+            <option value='12'>12</option>
+            <option value='13'>13</option>
+            <option value='14'>14</option>
+            <option value='15'>15</option>
+            <option value='16'>16</option>
+            <option value='17'>17</option>
+            
+        </select>
+
+        <select name= 'startMinute'>
+            <option value='0'>00</option>
+            <option value='10'>10</option>
+            <option value='20'>20</option>
+            <option value='30'>30</option>
+            <option value='40'>40</option>
+            <option value='50'>50</option>
+        </select> 
+        </br>
+        </br>
+
+        <select name= 'endHour'>
+            <option value='8'>8</option>
+            <option value='9'>9</option>
+            <option value='10'>10</option>
+            <option value='11'>11</option>
+            <option value='12'>12</option>
+            <option value='13'>13</option>
+            <option value='14'>14</option>
+            <option value='15'>15</option>
+            <option value='16'>16</option>
+            <option value='17'>17</option>
+        </select>
+
+        <select name= 'endMinute'>
+            <option value='0'>00</option>
+            <option value='10'>10</option>
+            <option value='20'>20</option>
+            <option value='30'>30</option>
+            <option value='40'>40</option>
+            <option value='50'>50</option>
+        </select>
+        <div style="position:absolute;top:300px;left:500px;border:red thin solid;">{errorDateEvent}{errorRecur}</div>
+        </br> 
+        <p>4. Enter the specifics for the meeting.</p>
+        <textarea name='description' ></textarea>
+        </br>
+        <p>5. Is this going to be a recurring event?.</p>
+        <input type='radio' name='' value='no'>no</br> 
+        <input type='radio' name='recurrence' value='yes'>yes</br> 
+        <p>6. If it is recurring , specify weekly, bi-weekly, or monthly.</p>
+        <input type='radio' name='repetition' value='weekly'>weekly</br> 
+        <input type='radio' name='repetition' value='bi-weekly'>bi-weekly</br> 
+        <input type='radio' name='repetition' value='monthly'>monthly</br> 
+
+        <p> Duration (max 4 weeks)</p>
+        <input type='name' value='' name='duration' >
+        </br>
+        <input type="submit" name="submit" value="create" /> 
+        </form>
+        </br>
+      
+         
+        
+
+
+    </body>
+</html>

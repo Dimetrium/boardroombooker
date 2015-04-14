@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<ISTRINGTABLE LANG="ru">
+    <ISTRING>
+        <KEY>{{BY_GENRE}}</KEY>
+        <VALUE>По жанрам</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{BY_AUTHORS}}</KEY>
+        <VALUE>По авторам</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{SIGN_UP}}</KEY>
+        <VALUE>Зарагистрироваться \ Вход</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Create Account}}</KEY>
+        <VALUE>Создать Учетную Запись</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Username}}</KEY>
+        <VALUE>Имя пользователя</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Password}}</KEY>
+        <VALUE>Пароль</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Login}}</KEY>
+        <VALUE>Логин</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Cancel}}</KEY>
+        <VALUE>Отмена</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{MAIN_H2}}</KEY>
+        <VALUE>Рекомендуемые</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{PRODUCT_BUTTON_MAIN}}</KEY>
+        <VALUE>ДЕТАЛЬНО</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{ADD TO CART}}</KEY>
+        <VALUE>ДОБАВИТЬ В КОРЗИНУ</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{QTY}}</KEY>
+        <VALUE>Кол-во</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{AUTHOR}}</KEY>
+        <VALUE>Автор</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{GENRE}}</KEY>
+        <VALUE>Жанр</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{PRODUCT_BUTTON_MAIN}}</KEY>
+        <VALUE>ДЕТАЛЬНО</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{ALL_BOOK_SOLID}}</KEY>
+        <VALUE>Все книги проданы</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{SHORT_DESCR}}</KEY>
+        <VALUE>Это краткое описание магазина</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{STORE_COPYR}}</KEY>
+        <VALUE>2015 Book Shop.</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{PAY_METH}}</KEY>
+        <VALUE>ПОДДЕРЖИВАЕМЫЕ СПОСОБЫ ОПЛАТЫ</VALUE>
+    </ISTRING>
+</ISTRINGTABLE>

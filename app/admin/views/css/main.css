@@ -1,0 +1,788 @@
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+p, h1, h2, h3, h4, h5, ul, li{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ==========================================================================
+   Wrapper
+   ========================================================================== */
+
+#wrapper {
+    width: 1152px;
+    margin: 0 auto;
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(50, 50, 50, 0.41);
+-moz-box-shadow:    0px 0px 18px 0px rgba(50, 50, 50, 0.41);
+box-shadow:         0px 0px 18px 0px rgba(50, 50, 50, 0.41);
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+header {
+    background-color: #fff;
+}
+
+header a:link, header a:visited {
+    color: #5daad0;
+    text-decoration: none;
+    
+}
+
+/* --------- top area --------- */
+
+#top-area {
+    height: 50px;
+    background-color: #f6f6f6;
+    padding: 0 30px;
+    line-height: 50px;
+}
+
+/* --------- action-bar area --------- */
+
+#action-bar {
+    height: 60px;
+    padding: 35px 0 0 30px;
+    vertical-align: middle;
+    position: relative;
+    z-index: 2;
+
+}
+
+#action-bar a:link, #action-bar a:visited {
+    color: #000;
+}
+
+    /* --------- action-bar (logo) --------- */
+
+#action-bar #logo-accent {
+    color: #5daad0;
+}
+
+#action-bar #logo {
+    float: left;
+    margin-right: 100px;
+    font-size: 20px;
+}
+
+    /* --------- action-bar (dropdown menu) --------- */
+
+#action-bar .dropdown {
+    float: left;
+    padding-right: 25px;
+    margin-right: 25px;
+    border-right: 1px dotted #aaa;
+}
+
+#action-bar .dropdown ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#action-bar .dropdown ul li{
+    display: block;
+    position: relative;
+    float: left;
+}
+
+#action-bar .dropdown ul li ul {
+    display: none;
+}
+
+#action-bar .dropdown ul li a {
+    display: block;
+    text-decoration: none;
+    color: #5daad0;
+    background-color: #fff;
+    margin-left: 1px;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+#action-bar .dropdown ul ul li a:link, #action-bar .dropdown ul ul li a:visited {
+    color: #000;
+}
+
+#action-bar .dropdown ul ul li a:hover {
+    color: #aaa;
+}
+
+#action-bar .dropdown li:hover ul {
+    display: block;
+    position: absolute;
+    top: 100%;
+    border: 1px solid #c3c3c3;
+    padding: 5px;
+    width: 160px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #fff;
+}
+    
+#action-bar .dropdown li:hover li {
+    float: none;
+    background-color: #fff;
+}
+
+/*---------sign styles*--------*/
+
+#action-bar #signin li:hover ul {
+    width: 100px;
+}
+
+/* ------------ action-bar view-cart ------------ */
+
+#action-bar #view-cart{
+    float: left;
+}
+
+#action-bar #view-cart a:link, #action-bar #view-cart a:visited {
+    color: #5daad0:
+}
+
+/* ==========================================================================
+   MAIN-CONTENT
+   ========================================================================== */
+
+#main-content {
+    padding: 20px 30px 0 30px;
+}
+
+#main-content h2, #main-content h3 {
+    color: #2e373f;
+    margin-bottom: 20px;
+}
+
+#main-content h3{
+    margin-bottom: 5px;
+}
+
+#main-content h3 a:link, #main-content h3 a:visited{
+    color: #2e373f;
+    text-decoration: none;
+}
+
+#main-content h5{
+    color: #5f5e5e;
+    margin-bottom: 20px;
+}
+
+#main-content p{
+    margin-bottom: 25px;
+}
+
+#main-content hr{
+    margin-bottom: 20px;
+    /*width: 1080px;*/
+}
+
+/* ------------ categories-menu ------------ */
+
+#categories-menu {
+    width: 180px;
+    text-align: left;
+    border-right: 1px solid #aaa;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+#categories-menu h3{
+    color: #c3c3c3;
+}
+
+#categories-menu ul{
+    margin-left: 20px;
+    list-style-image: url(../img/right-arrow.gif)
+}
+
+#categories-menu a:link, #categories-menu a:visited {
+    text-decoration: none;
+    color: #2e373f;
+    
+}
+
+/* ------------ listings ------------ */
+
+#listings {
+    text-align: left;
+    width: 920px;
+    float: right;
+}
+
+#listings .product{
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+
+.lt-ie8 #listings {
+    margin-top: -110px;
+}
+
+/* ------------ pagination ------------ */
+
+#pagination {
+    height: 50px;
+    line-height: 50px;
+    margin-left: 200px;
+}
+
+#pagination .current{
+    font-size: 23px;
+}
+
+#pagination a:link, #pagination a:visited{
+    text-decoration: none;
+    color: #5daad0;
+}
+
+/* ------------ productS ------------ */
+
+#products {
+    text-align: center
+}
+
+.product {
+    text-align: left;
+    width: 229px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-right: 40px;
+    vertical-align: top;
+}
+
+.product .author {
+    color: #9dbb5f;
+}
+
+.product .genre {
+    color: red;
+}
+
+.product img.feature{
+    margin-bottom: 40px;
+}
+
+.product .wish a:link, .product .wish a:visited{
+    text-decoration: none;
+    color: #5daad0;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   Product Page
+   ========================================================================== */
+
+#product-image, #product-details, #product-info {
+    float: left;
+    margin: 20px 0;
+}
+
+#product-image{
+    width: 45%;
+}
+#product-details{
+    width: 30%;
+}
+
+#product-details h1{
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+#product-details input {
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid #aaa;
+    padding: 5px 10px;
+    border-radius: 5px;-moz-border-radius: 5px;-webkit-border-radius: 5px;
+}
+
+#product-details button {
+    margin-bottom: 10px;
+}
+
+#product-info{
+    width: 20%;
+    margin-top: 90px;
+    margin-left: 40px;
+}
+
+#product-info p{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#product-info p.price {
+    text-align: center;
+    width: 100px;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border: 1px solid #eee;
+}
+
+#product-details a:link, #product-details a:visited{
+    color: #5daad0;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#product-info p span {
+    font-weight: normal;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+footer h4{
+    color: #c3c3c3;
+    margin-bottom: 15px;
+}
+
+/* ------------ contact ------------ */
+
+footer #contact{
+    background-color: #faf9f9;
+    height: 167px;
+    text-align: center;
+}
+
+footer #contact h3{
+    padding-top: 50px;
+    color: #2e373f;
+}
+
+footer #contact a:link, footer #contact a:visited{
+    text-decoration: none;
+    color: #5daad0;
+}
+
+/* ------------ links ------------ */
+
+footer #links{
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer #links a:link, footer #links a:visited{
+    color: #2e373f;
+    text-decoration: none;
+}
+
+footer #links ul{
+    margin-left: 13px;
+    list-style-image: url(/img/right-arrow.gif);
+    list-style-position: inherit;
+}
+
+footer #my-account, footer #info, footer #extras {
+    text-align: left;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: top;
+} 
+
+footer #my-account, footer #info{
+    margin-right: 130px;
+}
+
+
+/* ------------ copy connect payment ------------ */
+
+footer #copyright, #connect, #payments {
+    float: left;
+}
+
+footer #copyright, #connect {
+    margin-right: 130px;
+}
+
+footer #copyright{
+    padding: 20px 30px;
+}
+
+footer #copyright #store-desc {
+    color: #5f5e5e;
+}
+
+footer #copyright #store-copy {
+    color: #c3c3c3;
+}
+
+footer #logo {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+footer #logo a:link, a:visited {
+    color: #2e373f;
+}
+
+footer #logo #logo-accent{
+    color: #9c9c9c;
+}
+
+footer #connect a:link, a:visited {
+    color: #5daad0;
+    text-decoration: none;
+}
+
+footer #connect h4, #payments h4{
+    margin-top: 25px;
+} 
+
+footer #connect ul {
+    margin-left: 30px;
+}
+
+footer #connect ul li.twitter {
+    list-style-image: url(/img/twitter.gif)
+}
+
+footer #connect ul li.fb {
+    list-style-image: url(/img/fb.gif)
+}
+
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.default-btn {
+    background-color: #5daad0;
+    border: 1px solid #649cb7;
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 12px 10px 6px #467f9c;
+}
+
+.secondary-btn {
+    background-color: #2e373f;
+    border: 1px solid #46535f;
+    color: #d0d0d0;
+    padding: 15px 35px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 4px 3px 7px #22292f;
+    position: relative;
+    z-index: 1;
+}
+
+/* IE7 PADDING FIX*/
+.lt-ie8 .default-btn, .secondary-btn {
+    display: inline-block;
+}
+
+.cart-btn {
+    padding: 10px 10px 10px 0;
+    background-color: #5daad0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+/* IE7 PADDING FIX*/
+.lt-ie8 .cart-btn {
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.cart-btn .price{
+    background-color: #2e373f;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+}
+
+.cart-btn:link, .cart-btn:visited{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px
+}
+
+.cart-btn img{
+    padding-bottom: 3px;
+    margin-left: 3px;
+    
+}
+
+.secondary-cart-btn {
+    background-color: #5daad0;
+    /*border: 1px solid #649cb7;*/
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    /*text-decoration: none;*/
+    border: none;
+    box-shadow: 1px 1px 7px #467f9c;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

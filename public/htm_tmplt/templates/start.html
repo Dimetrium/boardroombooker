@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>site</title>
+<link rel="stylesheet" type="text/css" href="./templates/style/style.css" />
+</head>
+<body>
+<div id="page" style="width: 240px; min-height:350px!important;">
+	<div id="page_wrapper">
+		<div id="content" style="border: medium none;min-height: 0px;  width: 210px;">
+			<h1>Booker</h1>
+			<h2>Login</h2>
+			<form action="index.php" method="post">
+				<label>Login:</label>
+				<input class="select" type="text" name="login" value="{login}" required=""><span style="color:red">{errorLogin}</span> 
+				<br/><br/>			
+				<label>Password:</label>
+				<input class="select" type="password" name="password" value="" required=""><span style="color:red">{errorPass}</span>
+				<br/>
+
+				<br/>
+				<input class="button" name="clear" type="reset" value="Clear">
+				<input class="button" name="submit" type="submit" value="Send">
+			</form> 		
+		</div> <!-- CONTENT -->
+	</div> <!-- PAGE_WRAPPER -->
+</div> <!-- PAGE -->
+</body>
+</html> 

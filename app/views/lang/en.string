@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<ISTRINGTABLE LANG="en">
+    <ISTRING>
+        <KEY>{{BY_GENRE}}</KEY>
+        <VALUE>By Genre </VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{BY_AUTHORS}}</KEY>
+        <VALUE> By Authors </VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{SIGN_UP}}</KEY>
+        <VALUE>Sign in\Sign Up</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Create Account}}</KEY>
+        <VALUE>Create Account</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Username}}</KEY>
+        <VALUE>Username</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Password}}</KEY>
+        <VALUE>Password</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Login}}</KEY>
+        <VALUE>Login</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Cancel}}</KEY>
+        <VALUE>Cancel</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{MAIN_H2}}</KEY>
+        <VALUE>Featured</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{PRODUCT_BUTTON_MAIN}}</KEY>
+        <VALUE>VIEW DETAILS</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{ADD TO CART}}</KEY>
+        <VALUE>ADD TO CART</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{QTY}}</KEY>
+        <VALUE>Qty</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{AUTHOR}}</KEY>
+        <VALUE>Author</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{GENRE}}</KEY>
+        <VALUE>Genre</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{ALL_BOOK_SOLID}}</KEY>
+        <VALUE>All books are sold</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{SHORT_DESCR}}</KEY>
+        <VALUE>This is a short description of the store.</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{STORE_COPYR}}</KEY>
+        <VALUE>2015 Book Shop.</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{PAY_METH}}</KEY>
+        <VALUE>SUPPORTED PAYMENT METHODS</VALUE>
+    </ISTRING>
+</ISTRINGTABLE>
