@@ -29,21 +29,15 @@ class Controller_Main extends Controller
     function action_index ()
     {
 
-        $template = 'main_view.php';
+        $template = 'calendar_view.php';
 
         /**
          * @return array
          */
 
-        $data = $this->model->get_data();
+        $data[] = $this->model->draw_calendar(4, 2015);
 
-        /**
-         * Generate html view
-         *
-         * @param 'main_view.php'
-         * @param 'template_view.php'
-         * @param $data array
-         */
+
         if ( is_array( $data ) ) {
             return $this->view->generate( $template, 'template_view.php', $data );
         } else {

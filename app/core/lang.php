@@ -36,16 +36,20 @@ class Lang
         foreach ( $keys as $key => $val ) {
             $this->forRender[ $key ] = $val;
         }
+
         return $this->forRender;
     }
 
-    public function templateRender (/*$template, */$ob_data)
+    public function templateRender (/*$template, */
+        $ob_data )
     {
-        $this->template = /*file_get_contents( 'app/views/' . $template ) |*/ $ob_data;
+        $this->template = /*file_get_contents( 'app/views/' . $template ) |*/
+            $ob_data;
 
         foreach ( $this->forRender as $key => $val ) {
-            $this->template = str_replace( $key, $val,  $this->template );
+            $this->template = str_replace( $key, $val, $this->template );
         }
+
         return $this->template;
     }
 

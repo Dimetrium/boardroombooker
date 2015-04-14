@@ -41,6 +41,7 @@ class DBConnect
         if ( !self::$instance ) {
             self::$instance = new DBConnect();
         }
+
         return self::$instance;
     }
 
@@ -57,6 +58,7 @@ class DBConnect
         try {
             $stmt = $this->dbh->prepare( $query );
             $stmt->execute( $params );
+
             return $stmt->fetch();
         } catch ( PDOException $e ) {
             throw new Exception( $e->getMessage() );
@@ -68,11 +70,13 @@ class DBConnect
         try {
             $stmt = $this->dbh->prepare( $query );
             $stmt->execute( $params );
+
             return $stmt->fetchAll();
         } catch ( PDOException $e ) {
             throw new Exception( $e->getMessage() );
         }
     }
+
     public function insertRow ( $query, $params )
     {
         try {
@@ -82,21 +86,21 @@ class DBConnect
             throw new Exception( $e->getMessage() );
         }
     }
-    public function lastInsertId()
+
+    public function lastInsertId ()
     {
         return $this->dbh->lastInsertId();
     }
-    /*
 
-        public function updateRow ( $query, $params )
-        {
-            return $this->insertRow( $query, $params );
-        }
+    public function updateRow ( $query, $params )
+    {
+        return $this->insertRow( $query, $params );
+    }
 
-        public function deleteRow ( $query, $params )
-        {
-            return $this->insertRow( $query, $params );
-        }*/
+    public function deleteRow ( $query, $params )
+    {
+        return $this->insertRow( $query, $params );
+    }
 
     /**
      * Empty clone magic method to prevent duplication.

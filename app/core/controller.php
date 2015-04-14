@@ -12,6 +12,7 @@ class Controller
      * Constructor
      *
      * Get instance of View Controller
+     *
      * @param int from controller category id
      */
     function __construct ()
