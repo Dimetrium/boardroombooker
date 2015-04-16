@@ -1,7 +1,5 @@
 <?php
 
-namespace donatj;
-
 /**
  * Simple Calendar
  *
@@ -109,7 +107,7 @@ class SimpleCalendar {
 
 		$this->arrayRotate($wdays, $this->offset);
 		$wday    = date('N', mktime(0, 0, 1, $this->now['mon'], 1, $this->now['year'])) - $this->offset;
-		$no_days = cal_days_in_month(CAL_GREGORIAN, $this->now['mon'], $this->now['year']);
+		$no_days = date('t', strtotime( $this->now['year'].'-'.$this->now['mon'].'-01' ));
 
 		$out = '<table cellpadding="0" cellspacing="0" class="SimpleCalendar"><thead><tr>';
 
@@ -142,7 +140,7 @@ class SimpleCalendar {
 
 			if( is_array($dHtml_arr) ) {
 				foreach( $dHtml_arr as $dHtml ) {
-					$out .= '<div class="event">' . $dHtml . '</div>';
+					$out .= '<div class="event"><a href="#">' . $dHtml . '</a></div>';
 				}
 			}
 

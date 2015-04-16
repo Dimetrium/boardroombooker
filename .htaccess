@@ -1,8 +1,8 @@
 AddDefaultCharset utf8
 RewriteEngine On
 
-#RewriteBase /~user5/bookshop/
-RewriteBase /
+RewriteBase /~user5/boardroombooker/
+#RewriteBase /
 
 
 

@@ -24,7 +24,7 @@ class Router
          */
         $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
         $routes = explode( '/', $_SERVER[ 'REQUEST_URI' ] );
-//        $routes = array_slice($routes, 2);
+        $routes = array_slice($routes, 2);
 
         if ( !empty( $routes[ 1 ] ) ) {
             $controller_name = $routes[ 1 ];
