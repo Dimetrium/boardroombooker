@@ -3,11 +3,11 @@
 <ISTRINGTABLE LANG="en">
     <ISTRING>
         <KEY>{{BY_GENRE}}</KEY>
-        <VALUE>By Genre </VALUE>
+        <VALUE>By Genre</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{BY_AUTHORS}}</KEY>
-        <VALUE> By Authors </VALUE>
+        <VALUE>By Authors</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{SIGN_UP}}</KEY>

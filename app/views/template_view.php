@@ -12,9 +12,9 @@
 <body>
 <div class="container">
 
-<!--        --><?php //include 'app/views/header_view.php'; ?>
-        <?php include 'app/views/' . $content_view; ?>
-<!--        --><?php //include 'app/views/footer_view.php'; ?>
+    <!--        --><?php //include 'app/views/header_view.php'; ?>
+    <?php include 'app/views/' . $content_view; ?>
+    <!--        --><?php //include 'app/views/footer_view.php'; ?>
 
 </div>
 <script type="text/javascript" src="<?= JS ?>bootstrap.min.js"></script>

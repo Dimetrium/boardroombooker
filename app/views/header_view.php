@@ -1,11 +1,10 @@
-
 <header>
     <div class="btn-group" role="group" aria-label="...">
         <form action="<?php $_SERVER[ 'REQUEST_URI' ] ?>" method="post">
-                        <button type="submit" name="lang" value="en" class="btn btn-default">En</button>
-                        <button type="submit" name="lang" value="ru" class="btn btn-default">Ru</button>
-<!--            <button onclick="SendPost()" type="submit" name="lang" value="en" class="btn btn-default">En</button>-->
-<!--            <button onclick="SendPost()" type="submit" name="lang" value="ru" class="btn btn-default">Ru</button>-->
+            <button type="submit" name="lang" value="en" class="btn btn-default">En</button>
+            <button type="submit" name="lang" value="ru" class="btn btn-default">Ru</button>
+            <!--            <button onclick="SendPost()" type="submit" name="lang" value="en" class="btn btn-default">En</button>-->
+            <!--            <button onclick="SendPost()" type="submit" name="lang" value="ru" class="btn btn-default">Ru</button>-->
         </form>
     </div>
 

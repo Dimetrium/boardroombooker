@@ -1,37 +1,39 @@
 <div class="row">
-<div class="col-md-4 col-md-offset-4">
-    <div><h1>Boardroom Booker</h1></div>
-    <div class="login-panel panel panel-default">
-        <div class="panel-heading">
-            <h1 class="panel-title">Sign In</h1>
-        </div>
-        <div class="panel-body">
-            <form method="post" action='' name="login_form">
-                <fieldset>
-                    <div class="form-group">
-                        <input class="form-control" placeholder="{{Username}}" name="username" type="login" autofocus="">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" placeholder="{{Password}}" name="password" type="password" value="">
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-sm btn-success">{{Login}}</button>
-                </fieldset>
-            </form>
+    <div class="col-md-4 col-md-offset-4">
+        <div><h1>Boardroom Booker</h1></div>
+        <div class="login-panel panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title">Sign In</h1>
+            </div>
+            <div class="panel-body">
+                <form method="post" action='' name="login_form">
+                    <fieldset>
+                        <div class="form-group">
+                            <input class="form-control" placeholder="{{Username}}" name="username" type="login"
+                                   autofocus="">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" placeholder="{{Password}}" name="password" type="password"
+                                   value="">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-success">{{Login}}</button>
+                    </fieldset>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-</div>
 
 
-<?php extract($data); ?>
-<?php if($login_status=="access_granted") { ?>
-<p style="color:green">Авторизация прошла успешно.</p>
-<?php } elseif($login_status=="access_denied") { ?>
-<p style="color:red">Логин и/или пароль введены неверно.</p>
+<?php extract( $data ); ?>
+<?php if ( $login_status == "access_granted" ) { ?>
+    <p style="color:green">Авторизация прошла успешно.</p>
+<?php } elseif ( $login_status == "access_denied" ) { ?>
+    <p style="color:red">Логин и/или пароль введены неверно.</p>
 <?php } ?>
 
