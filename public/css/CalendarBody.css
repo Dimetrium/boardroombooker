@@ -1,0 +1,51 @@
+table.CalendarBody {
+    font-family: Arial;
+    /*border-collapse: collapse;*/
+}
+
+table.CalendarBody th {
+    background: #C9E9F0;
+    color: #0092B4;
+    font-size: 11px;
+    padding: 3px;
+    border: 1px solid #bbb;
+    border-top: none;
+}
+
+table.CalendarBody tbody td {
+    vertical-align: top;
+    width: 130px;
+    height: 130px;
+    border: 1px solid #bbb;
+    background: #e6e6e6;
+}
+
+table.CalendarBody tbody td time {
+    font-size: .7em;
+    display: block;
+    background: white;
+    padding: 2px;
+    text-align: right;
+    font-weight: bold;
+}
+
+table.CalendarBody tbody td.CBsuffix, table.CalendarBody tbody td.CBprefix {
+    background: white;
+}
+
+table.CalendarBody tbody td div.event {
+    color: #355;
+    font-size: 12px;
+    padding: 5px;
+    line-height: 1em;
+    border-bottom: 1px solid #bbb;
+    background: #EEF25B;
+}
+
+table.CalendarBody tbody td.today {
+    background: #d2d2d2;
+}
+table.CalendarBody tbody td div.event a{
+    color: #2A2449;
+    text-decoration: none;
+}

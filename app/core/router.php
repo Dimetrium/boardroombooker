@@ -16,7 +16,8 @@ class Router
          */
         $controller_name = 'Main';
         $action_name = 'index';
-        $param = NULL;
+        $param_one = NULL;
+        $param_two = NULL;
 
         /**
          * parse URI and get controller and action names
@@ -24,7 +25,7 @@ class Router
          */
         $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
         $routes = explode( '/', $_SERVER[ 'REQUEST_URI' ] );
-        $routes = array_slice($routes, 2);
+//        $routes = array_slice($routes, 2);
 
         if ( !empty( $routes[ 1 ] ) ) {
             $controller_name = $routes[ 1 ];
@@ -35,8 +36,13 @@ class Router
         }
 
         if ( !empty( $segments[ 2 ] ) ) {
-            $param = $segments[ 2 ];
+            $param_one = $segments[ 2 ];
         }
+
+        if ( !empty( $segments[ 3 ] ) ) {
+            $param_two = $segments[ 3 ];
+        }
+
         /**
          * Define model, where model name = 'Model_' prefix + controller name,
          * and include if exist.
@@ -46,7 +52,6 @@ class Router
          * @var string
          */
         $model_name = 'Model_' . $controller_name;
-
         $user = new User();
         if ( FALSE == $user->userCookie() ) {
             $controller_name = 'Controller_Login';
@@ -75,7 +80,7 @@ class Router
          * and call action
          */
 
-        $controller = new $controller_name( $param );
+        $controller = new $controller_name( $param_one, $param_two);
         $action = $action_name;
 
         if ( method_exists( $controller, $action ) ) {

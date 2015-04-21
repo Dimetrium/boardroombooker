@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 15 2015 г., 00:47
+-- Время создания: Апр 21 2015 г., 11:42
 -- Версия сервера: 5.5.41-log
 -- Версия PHP: 5.4.35
 
@@ -23,6 +23,57 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `xyz_appointments`
+--
+
+CREATE TABLE IF NOT EXISTS `xyz_appointments` (
+  `appointment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `desc` varchar(255) NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `start` varchar(255) NOT NULL,
+  `end` varchar(255) NOT NULL,
+  `id_room` int(11) NOT NULL,
+  PRIMARY KEY (`appointment_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Дамп данных таблицы `xyz_appointments`
+--
+
+INSERT INTO `xyz_appointments` (`appointment_id`, `desc`, `employee_id`, `start`, `end`, `id_room`) VALUES
+(1, 'Test desc appointments', 1, '1429086731', '1429087841', 1),
+(2, 'Test desc appointments', 2, '1420186731', '1420186741', 2),
+(3, 'Test desc appointments', 3, '1420286731', '1420286741', 3),
+(4, 'Test desc appointments', 4, '1429466665', '1429470265', 1),
+(5, 'Test desc appointments', 5, '1429189998', '1429193598', 1),
+(6, 'Test desc appointments', 6, '1429608620', '1429612220', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `xyz_employee`
+--
+
+CREATE TABLE IF NOT EXISTS `xyz_employee` (
+  `employee_id` int(11) NOT NULL DEFAULT '0',
+  `employee_password` varchar(10) DEFAULT NULL,
+  `employee_name` varchar(10) DEFAULT NULL,
+  `role_id` int(11) DEFAULT '0',
+  `employee_hash` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`employee_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `xyz_employee`
+--
+
+INSERT INTO `xyz_employee` (`employee_id`, `employee_password`, `employee_name`, `role_id`, `employee_hash`) VALUES
+(0, 'PASSWORD', 'USER1', 0, 'q'),
+(1, '123', 'root', 1, '96fa28c8f097e9193545fb7f14acc0bf');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `xyz_group`
 --
 
@@ -31,56 +82,6 @@ CREATE TABLE IF NOT EXISTS `xyz_group` (
   `id_role` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id_role`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `xyz_orders`
---
-
-CREATE TABLE IF NOT EXISTS `xyz_orders` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(100) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `pay_method_id` varchar(255) DEFAULT NULL,
-  `pay_status_id` int(10) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `xyz_pay_status`
---
-
-CREATE TABLE IF NOT EXISTS `xyz_pay_status` (
-  `pay_status_id` int(2) NOT NULL AUTO_INCREMENT,
-  `pay_status_name` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`pay_status_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `xyz_users`
---
-
-CREATE TABLE IF NOT EXISTS `xyz_users` (
-  `user_id` int(11) NOT NULL DEFAULT '0',
-  `password` varchar(10) DEFAULT NULL,
-  `login` varchar(10) DEFAULT NULL,
-  `role_id` int(11) DEFAULT '0',
-  `user_hash` varchar(32) DEFAULT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `xyz_users`
---
-
-INSERT INTO `xyz_users` (`user_id`, `password`, `login`, `role_id`, `user_hash`) VALUES
-(0, 'PASSWORD', 'USER1', 0, 'q'),
-(1, '123', 'root', 1, '96fa28c8f097e9193545fb7f14acc0bf');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

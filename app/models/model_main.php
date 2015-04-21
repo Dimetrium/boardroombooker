@@ -3,7 +3,6 @@
 /**
  * Class Model_Main
  *
- * Gets all books from db
  */
 class Model_Main extends Model
 {
@@ -11,10 +10,10 @@ class Model_Main extends Model
     /**
      * @return array
      */
-    public function get_data ()
+    public function prev ()
     {
+        $calendar = new Calendar($showmonth . '/'.$current_day.'/' . $showyear);
 
-        return $this->getAllBooks();
 
     }
 

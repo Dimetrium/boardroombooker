@@ -2,7 +2,7 @@
 
 class Model_User extends Model
 {
-    private $param;
+    private $param_one;
 
     public function __construct ()
     {
@@ -10,7 +10,7 @@ class Model_User extends Model
 
         // Get id from URI
         $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
-        $this->param = $segments[ 2 ];
+        $this->param_one = $segments[ 2 ];
     }
 
     /**
@@ -47,7 +47,7 @@ SQL;
             $data = $this->dbh->getRows( $query, array( 'id' => $last_id ) );
             $this->dbh = NULL;
         } else {
-            $data = $this->dbh->getRows( $query, array( 'id' => $this->param ) );
+            $data = $this->dbh->getRows( $query, array( 'id' => $this->param_one ) );
             $this->dbh = NULL;
         }
 
@@ -68,7 +68,7 @@ SQL;
         }
 
         $query = <<<SQL
-            INSERT INTO xyz_users (login, password)
+            INSERT INTO xyz_users (login, employee_password)
 			VALUES (:name, :password);
 SQL;
         $this->dbh->insertRow( $query, array(

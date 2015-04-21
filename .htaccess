@@ -1,8 +1,8 @@
 AddDefaultCharset utf8
 RewriteEngine On
 
-RewriteBase /~user5/boardroombooker/
-#RewriteBase /
+#RewriteBase /~user5/boardroombooker/
+RewriteBase /
 
 
 
@@ -11,7 +11,7 @@ RewriteCond %{REQUEST_URI} !-f
 RewriteCond %{REQUEST_URI} !-d
 RewriteCond %{REQUEST_URI} !-l
 
-RewriteRule !\.(js|jpeg|css|jpg|html|gif|png)$ index.php [PT]
+RewriteRule !\.(js|jpeg|css|jpg|html|gif|png|ttf|ico|woff)$ index.php [PT]
 
 #RewriteRule ^ru/(.*)$ /1?lang=ru [L,QSA]
 

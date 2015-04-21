@@ -3,15 +3,12 @@
 class View
 {
 
-    function generate ( $content_view, $template_view, $data = array() )
+    function generate ( $content_view, $template_view, $data = null )
     {
-
-        foreach ( $data as $row ) {
-            $data[ ] = $row;
-        }
-        $data = array_filter( $data );
-
-
+//        foreach ( $data as $row ) {
+//            $data[ ] = $row;
+//        }
+//        $data = $data;
         ob_start();
         include 'app/views/' . $template_view;
         $hz = ob_get_contents();

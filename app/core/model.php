@@ -6,15 +6,18 @@ class Model
      * @var DBConnect instance holder
      */
     protected $dbh;
-    protected $param;
+    protected $param_one;
 
     /**
      * Constructor
      * Get instance of DBConnect class
      */
-    public function __construct ( $param )
+    public function __construct ( $param_one = null)
     {
-        $this->param = $param;
+        if (null !== $param_one)
+        {
+            $this->$param_one = $param_one;
+        }
 
         $this->dbh = DBConnect::getInstance();
 
