@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `xyz_appointments` (
 -- Дамп данных таблицы `xyz_appointments`
 --
 
-INSERT INTO `xyz_appointments` (`appointment_id`, `desc`, `employee_id`, `start`, `end`, `id_room`) VALUES
+INSERT INTO `xyz_appointments` (`appointment_id`, `desc`, `employee_id`, app_start, app_end, `id_room`) VALUES
 (1, 'Test desc appointments', 1, '1429086731', '1429087841', 1),
 (2, 'Test desc appointments', 2, '1420186731', '1420186741', 2),
 (3, 'Test desc appointments', 3, '1420286731', '1420286741', 3),

@@ -6,8 +6,6 @@ class Model_User extends Model
 
     public function __construct ()
     {
-//        parent::__construct();
-
         // Get id from URI
         $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
         $this->param_one = $segments[ 2 ];

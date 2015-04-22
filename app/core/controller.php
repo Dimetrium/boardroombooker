@@ -18,28 +18,6 @@ class Controller
     function __construct ()
     {
 
-        /**
-         * TEST SECTION
-         */
-//        if ( !isset( $this->lang ) )
-//            $this->lang = 'en';
-//
-//        if ( !'' == $_POST[ 'lang' ] ) {
-//            $lang = $_POST[ 'lang' ];
-//            switch ( $lang ) {
-//                case 'en':
-//                    echo 'English selected';
-//                    break;
-//                case 'ru':
-//                    echo 'Russian selected';
-//                    break;
-//
-//            }
-//        }
-        /**
-         * END TEST SECTION
-         */
-
         $this->view = new View();
 
     }

@@ -8,7 +8,7 @@ class Controller_Bookit extends Controller
     {
 
         $this->view = new View();
-        $this->model = new Event_Model();
+//        $this->model = new Event_Model();
 
     }
 
@@ -18,7 +18,14 @@ class Controller_Bookit extends Controller
     }
     public function action_add()
     {
-        $this->model->add( $_POST );
+        $start_date = $_POST['date'].' '.$_POST['start'].':00';
+        $end_date = $_POST['date'].' '.$_POST['end'].':00';
+
+        $start_date = strtotime($start_date);
+        $end_date = strtotime($end_date);
+        var_dump($start_date);
+        var_dump($end_date);
+        var_dump( $_POST );
     }
 
 

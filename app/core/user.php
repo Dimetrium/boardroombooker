@@ -161,7 +161,7 @@ SQL;
             // and write down a new hash of authorization in a DB
             $query = <<<SQL
                 UPDATE xyz_employee
-                SET employee_hash= :hash
+                SET employee_hash= :employee_hash
                 WHERE employee_id= :employee_id;
 SQL;
             $this->dbh->updateRow( $query, array(

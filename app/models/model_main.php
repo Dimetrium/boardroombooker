@@ -6,88 +6,113 @@
  */
 class Model_Main extends Model
 {
+    private $month;
+    private $year;
 
     /**
      * @return array
+     * @throws Exception
      */
-    public function prev ()
+    public function getRooms ()
     {
-        $calendar = new Calendar($showmonth . '/'.$current_day.'/' . $showyear);
 
+        $query = <<<SQL
+            SELECT id_room
+            FROM xyz_appointments
+SQL;
+
+        $room = $this->dbh->getRows( $query );
+
+
+        // don't touch dis fuknshan
+        function array_value_recursive ( $key, array $arr )
+        {
+            $val = array();
+            array_walk_recursive( $arr, function ( $v, $k ) use ( $key, &$val ) {
+                if ( $k == $key ) array_push( $val, $v );
+            } );
+
+            return count( $val ) > 1 ? $val : array_pop( $val );
+        }
+
+        $room = array_value_recursive( 'id_room', $room );
+
+        return array_unique( $room );
 
     }
 
-    /**
-     * @return array
-     */
-    /* draws a calendar */
-    public function draw_calendar ( $month, $year )
+    public function getEvents ()
     {
-        $today_date = date( "d" );
-        $today_date = ltrim( $today_date, '0' );
+        /**
+         * get values of rooms id's from main page header of boardrooms select,
+         * write in session
+         * and Depending on room_ID get events
+         * @default '1' boardroom.
+         */
+        /**
+         * TODO: Change store method to Cookies
+         */
+        session_start();
+        if ( isset( $_POST[ 'id_room' ] ) ) {
+            $_SESSION[ 'id_room' ] = $_POST[ 'id_room' ];
+        } else {
+            if ( !isset( $_SESSION[ 'id_room' ] ) ) {
+                $_SESSION[ 'id_room' ] = '1';
+            }
+            $id = $_SESSION[ 'id_room' ];
+        }
+        session_write_close();
 
-        /* draw table */
-        $calendar = '<table cellpadding="0" cellspacing="0" class="calendar">';
+        $query = <<<SQL
+            SELECT app_start, app_end, id_room
+            FROM xyz_appointments
+            WHERE id_room = :id
+SQL;
 
-        /* table headings */
-        $headings = array( 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' );
-        $calendar .= '<tr class="calendar-row"><td class="calendar-day-head">' . implode( '</td><td class="calendar-day-head">', $headings ) . '</td></tr>';
+        $result = $this->dbh->getRows( $query, array(
+            'id' => $id,
+        ) );
+        $dbh = NULL;
+        foreach ( $result as $key => $val ) {
+            $event[ ] = date( 'H:i', $val[ 'app_start' ] ) . '-' . date( 'H:i', $val[ 'app_end' ] );
+            $date[ ] = date( 'm/d/Y', $val[ 'app_start' ] );
+        }
 
-        /* days and weeks vars now ... */
-        $running_day = date( 'w', mktime( 0, 0, 0, $month, 1, $year ) );
-        $days_in_month = date( 't', mktime( 0, 0, 0, $month, 1, $year ) );
-        $days_in_this_week = 1;
-        $day_counter = 0;
-        $dates_array = array();
+        function array_combine_($keys, $values)
+        {
+            $result = array();
+            foreach ($keys as $i => $k) {
+                $result[$k][] = $values[$i];
+            }
+            array_walk($result, create_function('&$v', '$v = (count($v) == 1)? array_pop($v): $v;'));
+            return    $result;
+        }
 
-        /* row for week one */
-        $calendar .= '<tr class="calendar-row">';
+        return array_combine( array_values($event), array_values($date) );
+    }
 
-        /* print "blank" days until the first of the current week */
-        for ( $x = 0; $x < $running_day; $x++ ):
-            $calendar .= '<td class="calendar-day-np"> </td>';
-            $days_in_this_week++;
-        endfor;
+    public function setDateToShow ( $month = NULL, $year = NULL )
+    {
+        $this->month = $month;
+        $this->year = $year;
+    }
 
-        /* keep going with days.... */
-        for ( $list_day = 1; $list_day <= $days_in_month; $list_day++ ):
-            $calendar .= '<td class="calendar-day">';
-            /* add in the day number */
-            $calendar .= '<div class="day-number">' . $list_day . '</div>';
+    public function getDateToShow ()
+    {
+        if ( isset( $_POST[ 'month' ] ) && isset( $_POST[ 'year' ] ) ) {
+            $month = $_POST[ 'month' ];
+            $year = $_POST[ 'year' ];
+        } else if ( NULL !== $this->month ) {
+            $month = $this->month;
+        } else if ( NULL == $this->year ) {
+            $yea = $this->year;
+        }
 
-            /** QUERY THE DATABASE FOR AN ENTRY FOR THIS DAY !!  IF MATCHES FOUND, PRINT THEM !! **/
-            $calendar .= str_repeat( '<p> </p>', 2 );
+        $month ? $showmonth = $month : $showmonth = date( 'm', time() );
+        $year ? $showyear = $year : $showyear = date( 'Y', time() );
+        $current_day = date( 'd', time() );
 
-            $calendar .= '</td>';
-            if ( $running_day == 6 ):
-                $calendar .= '</tr>';
-                if ( ( $day_counter + 1 ) != $days_in_month ):
-                    $calendar .= '<tr class="calendar-row">';
-                endif;
-                $running_day = -1;
-                $days_in_this_week = 0;
-            endif;
-            $days_in_this_week++;
-            $running_day++;
-            $day_counter++;
-        endfor;
-
-        /* finish the rest of the days in the week */
-        if ( $days_in_this_week < 8 ):
-            for ( $x = 1; $x <= ( 8 - $days_in_this_week ); $x++ ):
-                $calendar .= '<td class="calendar-day-np"> </td>';
-            endfor;
-        endif;
-
-        /* final row */
-        $calendar .= '</tr>';
-
-        /* end the table */
-        $calendar .= '</table>';
-
-        /* all done, return result */
-
-        return $calendar;
+        return $showmonth . '/' . $current_day . '/' . $showyear;
     }
 
 }

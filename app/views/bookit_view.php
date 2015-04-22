@@ -1,8 +1,5 @@
 <!-- Include Bootstrap Datepicker -->
 <link rel="stylesheet" href="<?= CSS ?>datapicker.min.css"/>
-<!--<link rel="stylesheet" href="--><?//= CSS ?><!--datepicker3.min.css"/>-->
-<!--<link rel="stylesheet" type="text/css" href="--><?//= CSS ?><!--bootstrap-clockpicker.min.css">-->
-
 <script src="<?= JS ?>bootstrap-datepicker.min.js"></script>
 
 
@@ -17,8 +14,8 @@
     }
 </style>
 
-<form method="post">
-    <!--    <fieldset>-->
+<form method="post" action="bookit/add">
+        <fieldset>
     <!-- Form Name -->
     <legend>Boardroom Booker</legend>
 
@@ -128,13 +125,8 @@
             </button>
         </div>
     </div>
-    <!--    </fieldset>-->
+        </fieldset>
 </form>
-
-<div>
-    The event 7:00 - 8:00 has been added.
-    Thw text for this event is "Management Meeting"
-</div>
 
 <script>
     $(document).ready(function () {
@@ -152,9 +144,3 @@
 
     });
 </script>
-
-<!--<script type="text/javascript" src="--><?//= JS ?><!--bootstrap-clockpicker.min.js"></script>-->
-<!---->
-<!--<script type="text/javascript">-->
-<!--    $('.clockpicker').clockpicker();-->
-<!--</script>-->
