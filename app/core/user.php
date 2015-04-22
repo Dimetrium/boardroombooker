@@ -54,7 +54,7 @@ class User
      */
     private function checkLoginLength ()
     {
-        if ( strlen( $this->login ) < 3 or strlen( $_POST[ 'employee_name' ] ) > 30 ) {
+        if ( strlen( $this->login ) < 3 or strlen( $_POST[ 'login' ] ) > 30 ) {
 
             $this->error[ ] = "Логин должен быть не меньше 3-х символов и не больше 30";
 
@@ -75,12 +75,12 @@ class User
     {
         $query = <<<SQL
             SELECT COUNT
-            (employee_id)
-            FROM xyz_employee
-            WHERE employee_name = :employee_name;
+            (user_id)
+            FROM xyz_users
+            WHERE login = :login;
 SQL;
 
-        $data = $this->dbh->getRows( $query, array( 'employee_name' => $this->login ) );
+        $data = $this->dbh->getRows( $query, array( 'login' => $this->login ) );
         $this->dbh = NULL;
         if ( $data > 0 ) {
 
@@ -117,12 +117,12 @@ SQL;
             $this->password = md5( md5( trim( $this->password ) ) );
             $query = <<<SQL
                 INSERT INTO
-                xyz_employee
-                SET employee_name = :employee_name, employee_password = :employee_password, role_id = :role_id;
+                xyz_users
+                SET login = :login, password = :password, role_id = :role_id;
 SQL;
             $this->dbh->insertRow( $query, array(
-                'employee_name' => $this->login,
-                'employee_password' => $this->password,
+                'login' => $this->login,
+                'password' => $this->password,
                 'role_id' => $this->role_id ) );
             $this->dbh = NULL;
 
@@ -146,31 +146,31 @@ SQL;
         // Get record  from a DB at which login equals to the entered
         $query = <<<SQL
             SELECT
-            employee_id, employee_password
-            FROM xyz_employee
-            WHERE employee_name = :employee_name LIMIT 1;
+            user_id, password
+            FROM xyz_users
+            WHERE login = :login LIMIT 1;
 SQL;
-        $data = $this->dbh->getRow( $query, array( 'employee_name' => $this->login ) );
+        $data = $this->dbh->getRow( $query, array( 'login' => $this->login ) );
 
         //  Is password compare ...
-        if ( $data[ 'employee_password' ] === $this->password ) {
+        if ( $data[ 'password' ] === $this->password ) {
 
             // ...generate a random hash,
             $hash = md5( uniqid( rand(), TRUE ) );
 
             // and write down a new hash of authorization in a DB
             $query = <<<SQL
-                UPDATE xyz_employee
-                SET employee_hash= :employee_hash
-                WHERE employee_id= :employee_id;
+                UPDATE xyz_users
+                SET user_hash= :hash
+                WHERE user_id= :user_id;
 SQL;
             $this->dbh->updateRow( $query, array(
-                'employee_id' => $data[ 'employee_id' ],
-                'employee_hash' => $hash ) );
+                'user_id' => $data[ 'user_id' ],
+                'hash' => $hash ) );
             $this->dbh = NULL;
 
             // Set cookies
-            setcookie( "id", $data[ 'employee_id' ], time() + 60 * 60 * 24 * 30 );
+            setcookie( "id", $data[ 'user_id' ], time() + 60 * 60 * 24 * 30 );
             setcookie( "hash", $hash, time() + 60 * 60 * 24 * 30 );
 
             return TRUE;
@@ -193,16 +193,16 @@ SQL;
         if ( isset( $_COOKIE[ 'id' ] ) and isset( $_COOKIE[ 'hash' ] ) ) {
 
             $query = <<<SQL
-                SELECT employee_hash, employee_id, employee_name
-                FROM xyz_employee
-                WHERE employee_id = :employee_id
+                SELECT user_hash, user_id, login
+                FROM xyz_users
+                WHERE user_id = :user_id
                 LIMIT 1;
 SQL;
-            $data = $this->dbh->getRow( $query, array( 'employee_id' => intval( $_COOKIE[ 'id' ] ) ) );
+            $data = $this->dbh->getRow( $query, array( 'user_id' => intval( $_COOKIE[ 'id' ] ) ) );
             $this->dbh = NULL;
 
-            if ( ( $data[ 'employee_hash' ] !== $_COOKIE[ 'hash' ] )
-                or ( $data[ 'employee_id' ] !== $_COOKIE[ 'id' ] )) {
+            if ( ( $data[ 'user_hash' ] !== $_COOKIE[ 'hash' ] )
+                or ( $data[ 'user_id' ] !== $_COOKIE[ 'id' ] )) {
 
                 setcookie( "id", "", time() - 3600 * 24 * 30 * 12, "/" );
                 setcookie( "hash", "", time() - 3600 * 24 * 30 * 12, "/" );
