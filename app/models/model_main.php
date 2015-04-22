@@ -74,21 +74,16 @@ SQL;
         ) );
         $dbh = NULL;
         foreach ( $result as $key => $val ) {
-            $event[ ] = date( 'H:i', $val[ 'app_start' ] ) . '-' . date( 'H:i', $val[ 'app_end' ] );
-            $date[ ] = date( 'm/d/Y', $val[ 'app_start' ] );
-        }
+          if (!empty($val['app_start']) || !empty($val['app_end']))
+          {
+            $time =  date( 'H:i', $val[ 'app_start' ] ) . '-' . date( 'H:i', $val[ 'app_end' ] );
+            $eventDate = date( 'm/d/Y', $val[ 'app_start' ] );
+          }
 
-        function array_combine_($keys, $values)
-        {
-            $result = array();
-            foreach ($keys as $i => $k) {
-                $result[$k][] = $values[$i];
-            }
-            array_walk($result, create_function('&$v', '$v = (count($v) == 1)? array_pop($v): $v;'));
-            return    $result;
-        }
+          $event[$key] = [ $time => $eventDate ];
 
-        return array_combine( array_values($event), array_values($date) );
+        }
+        return $event;
     }
 
     public function setDateToShow ( $month = NULL, $year = NULL )
@@ -105,7 +100,7 @@ SQL;
         } else if ( NULL !== $this->month ) {
             $month = $this->month;
         } else if ( NULL == $this->year ) {
-            $yea = $this->year;
+            $year = $this->year;
         }
 
         $month ? $showmonth = $month : $showmonth = date( 'm', time() );

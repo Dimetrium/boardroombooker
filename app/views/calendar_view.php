@@ -23,9 +23,7 @@ $previous_month_link = ( $month != 1 ? $month - 1 : 12 ) . '/' . ( $month != 1 ?
 
 /* booardroom list */
 foreach ( $boardrooms as $room ) {
-    $rooms .= '<div><a href="main" onClick="DoPost(' . $room . ')")>Boardroom # ' . $room . '</a></div>';
-//   $rooms .= '<div><a href="boardroom/'.$room.'" method="post">Boardroom # '.$room.'</a></div>';
-//    <a href="javascript:DoPost()">Click Here</A>;
+    $rooms .= '<div><a href="main" onClick="DoPost('.$room.')">Boardroom # '.$room.'</a></div>';
 }
 
 ?>

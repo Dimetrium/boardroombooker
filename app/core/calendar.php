@@ -151,11 +151,10 @@ class Calendar
 
             if ( is_array( $dHtml_arr ) ) {
                 foreach ( $dHtml_arr as $dHtml ) {
-//                    var_dump($dHtml);
-                    if ( $dHtml >= date('n')){
-                        $out .= '<div class="event"><a href="#">START ' . $dHtml . '</a></div>';
+                    if ( $dHtml <= date('n')){
+                        $out .= '<div class="event"><a href="#">Start: ' . $dHtml . '</a></div>';
                     }else {
-                        $out .= '<div class="event">FINISH ' . $dHtml . '</div>';
+                        $out .= '<div class="event">Fin: ' . $dHtml . '</div>';
                     }
                 }
             }

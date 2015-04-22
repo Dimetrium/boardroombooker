@@ -9,7 +9,7 @@ class Controller_Login extends Controller
         if ( ( isset( $_POST[ 'username' ] ) && isset( $_POST[ 'password' ] ) )
             && ( TRUE == $user->userAuthorization() ) ) {
 
-            header( 'Location:/');
+            header( 'Location:'.BASE);
 
         } else {
             $this->view->generate('login_view.php', 'template_view.php');

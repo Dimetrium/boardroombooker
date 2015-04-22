@@ -25,7 +25,8 @@ class Router
          */
         $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
         $routes = explode( '/', $_SERVER[ 'REQUEST_URI' ] );
-//        $routes = array_slice($routes, 2);
+        $routes = array_slice($routes, 2);
+        $segments = array_slice($segments, 2);
 
         if ( !empty( $routes[ 1 ] ) ) {
             $controller_name = $routes[ 1 ];
@@ -58,7 +59,6 @@ class Router
         } else {
             $controller_name = 'Controller_' . $controller_name;
         }
-
         $action_name = 'action_' . $action_name;
 
         $model_file = strtolower( $model_name ) . '.php';

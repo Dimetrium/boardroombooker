@@ -17,10 +17,11 @@ class Controller_Main extends Controller
 
         $calendar = new Calendar( $this->model->getDateToShow() );
         // add events array to calendar
-//        var_dump($this->model->getEvents());
 
         foreach ( $this->model->getEvents() as $event => $date ) {
-            $calendar->addDailyHtml( $event, $date );
+          foreach ( $date as $e=>$d){
+            $calendar->addDailyHtml( $e, $d );
+          }
         }
 
         $calendar->setStartOfWeek( 'Monday' );
