@@ -23,7 +23,7 @@ $previous_month_link = ( $month != 1 ? $month - 1 : 12 ) . '/' . ( $month != 1 ?
 
 /* booardroom list */
 foreach ( $boardrooms as $room ) {
-    $rooms .= '<div><a href="main" onClick="DoPost('.$room.')">Boardroom # '.$room.'</a></div>';
+    $rooms .= '<div class="col-md-4"><a href="main" onClick="DoPost(' . $room . ')">Boardroom # ' . $room . '</a></div>';
 }
 
 ?>
@@ -35,40 +35,53 @@ foreach ( $boardrooms as $room ) {
 
 </script>
 
-<div style="text-align: center">
-    <?= $rooms ?>
-</div>
-<h2>{{MAIN_H2}}</h2>
-<div>Boardroom # <?= $_SESSION[ 'id_room' ]; ?></div>
-<hr>
-<div class="title_bar">
-    <div class="selectDate">
-        <form method="post">
-            <select name="month" id="month">
-                <?= $select_month_control ?>
-            </select>
-            <select name="year" id="year">
-                <?= $select_year_control ?>
-            </select>
+<div class="container text-center">
+    <div class="row">
+        <?= $rooms ?>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4"><h2>{{MAIN_H2}}</h2>
+            <h4>Boardroom # <?= $_SESSION[ 'id_room' ]; ?></h4>
 
-            <input type="submit"
-                   name="submit"
-                   value="Go"/>
-        </form>
+            <form method="post">
+                <select name="month" id="month">
+                    <?= $select_month_control ?>
+                </select>
+                <select name="year" id="year">
+                    <?= $select_year_control ?>
+                </select>
+
+                <input type="submit"
+                       name="submit"
+                       value="Go"/>
+            </form>
+
+            <a href="bookit">Book It! | </a>
+            <a href="#">Employee List</a>
+        </div>
+
     </div>
 
-    <div class="previous_month">
-        <a href="main/index/<?= $previous_month_link ?>" class="control"><<< Previous Month</a>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="main/index/<?= $previous_month_link ?>" class="control"><<< Previous Month</a>
+        </div>
+        <div class="col-md-4">
+            <a href="main"><?= $data[ 'getDate' ][ 'month' ] . ', ' . $data[ 'getDate' ][ 'year' ] ?></a>
+        </div>
+        <div class="col-md-4">
+            <a href="main/index/<?= $next_month_link ?>" class="control">Next Month >>></a>
+        </div>
     </div>
-    <div class="show_month">
-        <h4><a href="main"><?= $data[ 'getDate' ][ 'month' ] . ', ' . $data[ 'getDate' ][ 'year' ] ?></a></h4>
+    <div class="row">
+        <div class="col-md-12">
+            <?= $data[ 'showCalendar' ]; ?>
+        </div>
     </div>
-    <div class="next_month">
-        <a href="main/index/<?= $next_month_link ?>" class="control">Next Month >>></a>
-    </div>
+
 </div>
-<hr/>
-<?= $data[ 'showCalendar' ]; ?>
-<a href="bookit">Book It!</a>
-<a href="#">Employee List</a>
-<hr>
+
+
+
+
+

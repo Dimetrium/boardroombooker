@@ -13,7 +13,9 @@
         right: -15px;
     }
 </style>
-
+<div class="container">
+<div class="row">
+    <div class="col-md-4">
 <form method="post" action="bookit/add">
         <fieldset>
     <!-- Form Name -->
@@ -126,8 +128,8 @@
         </div>
     </div>
         </fieldset>
-</form>
-
+</form></div></div>
+</div>
 <script>
     $(document).ready(function () {
         $('#dateRangePicker')
