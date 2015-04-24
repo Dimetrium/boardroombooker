@@ -34,5 +34,18 @@ SQL;
     public function del ( $month, $year )
     {
     }
+    
+    public function getUsers()
+    {
+        $query = <<<SQL
+            SELECT employee_name
+            FROM xyz_employee;
+SQL;
+        $data = $this->dbh->getRows( $query );
+        $this->dbh = NULL;
+        if ( $data ) {
+            return $date;
+        }
+    }
 
 }
