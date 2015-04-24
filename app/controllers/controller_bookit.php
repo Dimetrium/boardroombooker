@@ -20,7 +20,6 @@ class Controller_Bookit extends Controller
 
     public function action_add()
     {
-        var_dump($_POST);
         $this->model->addEvent();
 
     }
