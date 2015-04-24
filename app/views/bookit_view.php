@@ -11,7 +11,7 @@
 <div class="container">
 <div class="row">
     <div class="col-md-4">
-<form method="post" action="bookit/add">
+        <form method="post" action="bookit/add">
         <fieldset>
     <!-- Form Name -->
     <legend>Boardroom Booker</legend>
@@ -21,7 +21,7 @@
         <label class="control-label">1. Booked for:</label>
 
         <div class="controls">
-            <select id="selectbasic" name="userId" class="input-xlarge">
+            <select id="selectbasic" name="employee_id" class="input-xlarge">
                 <option>User one</option>
                 <option>User two</option>
             </select>
