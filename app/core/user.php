@@ -140,9 +140,9 @@ SQL;
                 'employee_hash' => $hash ) );
             $this->dbh = NULL;
             // Set cookies
-            setcookie( "id", $data[ 'employee_id' ], time() + 60 * 60 * 24 * 30 );
+            setcookie( "id", $data[ 'employee_id' ], time() + 60 * 60 * 24 * 30, BASE );
             setcookie( "hash", $hash, time() + 60 * 60 * 24 * 30 );
-            setcookie( "name", $data[ 'employee_name' ], time() + 60 * 60 * 24 * 30 );
+            setcookie( "name", $data[ 'employee_name' ], time() + 60 * 60 * 24 * 30, BASE );
 
             return TRUE;
         } else {
@@ -170,8 +170,8 @@ SQL;
             if ( ( $data[ 'employee_hash' ] !== $_COOKIE[ 'hash' ] )
                 or ( $data[ 'employee_id' ] !== $_COOKIE[ 'id' ] )
             ) {
-                setcookie( "id", "", time() - 3600 * 24 * 30 * 12, "/" );
-                setcookie( "hash", "", time() - 3600 * 24 * 30 * 12, "/" );
+                setcookie( "id", "", time() - 3600 * 24 * 30 * 12, BASE );
+                setcookie( "hash", "", time() - 3600 * 24 * 30 * 12, BASE );
 
                 return FALSE;
             } else {
@@ -189,9 +189,9 @@ SQL;
             unset($_COOKIE['id']);
             unset($_COOKIE['hash']);
             unset($_COOKIE['name']);
-            setcookie('id', null, -1);
-            setcookie('hash', null, -1);
-            setcookie('name', null, -1);
+            setcookie( "id", null, time() - 3600 * 24 * 30 * 12, BASE );
+            setcookie( "hash", null, time() - 3600 * 24 * 30 * 12, BASE );
+            setcookie( "name", null, time() - 3600 * 24 * 30 * 12, BASE );
         } else {
             return false;
         }
