@@ -43,9 +43,9 @@ SQL;
 SQL;
         $data = $this->dbh->getRows( $query );
         $this->dbh = NULL;
-        if ( $data ) {
+
             return $date;
-        }
+
     }
 
 }
