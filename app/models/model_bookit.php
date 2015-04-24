@@ -9,7 +9,7 @@ class Model_Bookit extends Model
       
       $start_date = $_POST['date'].' '.$_POST['start'].':00';
       $end_date = $_POST['date'].' '.$_POST['end'].':00';
-      $employee_id = $_POST['employee_id']
+      $employee_id = $_POST['employee_id'];
 
       $start = strtotime($start_date);
       $end = strtotime($end_date);
