@@ -33,6 +33,11 @@ class View
                 $rooms .= '<li class="list-group-item"><a href="main" onClick="DoPost(' . $room . ')">Boardroom # ' . $room . '</a></li>';
             }
         }
+        if (null !== $boardrooms){
+            foreach ( $boardrooms as $room ) {
+                $rooms .= '<li class="list-group-item"><a href="main" onClick="DoPost(' . $room . ')">Boardroom # ' . $room . '</a></li>';
+            }
+        }
 
         ob_start();
         include 'app/views/' . $template_view;
