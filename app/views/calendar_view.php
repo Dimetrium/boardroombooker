@@ -27,13 +27,7 @@ foreach ( $boardrooms as $room ) {
 }
 
 ?>
-<script>
-    jQuery(document).ready(function () {
-        $("html, body").animate({scrollTop: $("#scrol").offset().top}, 700);
-        console.log('executed scrollToElement');
-        return true;
-    });
-</script>
+
 <style>
     .navbar-static-top {
         margin-bottom: 20px;
@@ -143,9 +137,4 @@ foreach ( $boardrooms as $room ) {
     <a href="<?= BASE ?>"><strong>Boardroom Booking</strong></a>
 </footer>
 
-<script language="javascript">
-    function DoPost(id) {
-        $.post("main", {id_room: id});  //Your values here..
-    }
-</script>
 
