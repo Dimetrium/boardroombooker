@@ -43,7 +43,6 @@ SQL;
 SQL;
         $data = $this->dbh->getRows( $query );
         $this->dbh = NULL;
-var_dump($data);
             return $data;
 
     }
