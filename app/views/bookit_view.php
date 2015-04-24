@@ -22,7 +22,7 @@
 
         <div class="controls">
             <select id="selectbasic" name="employee_id" class="input-xlarge">
-                <option>User one</option>
+                <option value="<?=data['name']?>><?=data['name']?></option>
                 <option>User two</option>
             </select>
         </div>
