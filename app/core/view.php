@@ -33,7 +33,7 @@ class View
                 $rooms .= '<li class="list-group-item"><a href="main" onClick="DoPost(' . $room . ')">Boardroom # ' . $room . '</a></li>';
             }
         }
-        if ( !empty($data['employee_id'] && $data['employee_name']) ) {
+        if ( null !== ($data['employee_id'] && $data['employee_name']) ) {
             foreach ( $data as $id=>$value ) {
                 $userList .= '<option value="'.$value['employee_id'].'">'.$value['employee_name'].'</option>';
             }
