@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="<?= CSS ?>datapicker.min.css"/>
     <script type="text/javascript" src="<?= JS ?>jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
+            <script type="text/javascript" src="<?= JS ?>datapicker.js"></script>
+        <script src="<?= JS ?>bootstrap-datepicker.min.js"></script>
 </head>
 <body>
     <?php include 'app/views/' . $content_view; ?>
@@ -21,7 +23,6 @@
     </script>
         <script type="text/javascript" src="<?= JS ?>bootstrap.min.js"></script>
         <script type="text/javascript" src="<?= JS ?>calendar.js"></script>
-        <script type="text/javascript" src="<?= JS ?>datapicker.js"></script>
-        <script src="<?= JS ?>bootstrap-datepicker.min.js"></script>
+
 </body>
 </html>
