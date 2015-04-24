@@ -19,7 +19,7 @@ class Controller_Bookit extends Controller
 
     public function action_add()
     {
-        $this->model->addEvent($event);
+        $this->model->addEvent();
 
     }
 
