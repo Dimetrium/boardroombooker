@@ -22,7 +22,7 @@
 
         <div class="controls">
             <select id="selectbasic" name="employee_id" class="input-xlarge">
-                <option value="<?= data['employee_id']?>"> <?= data['employee_name'] ?> </option>
+                <?= $userList;?>
             </select>
         </div>
     </div>
