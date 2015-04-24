@@ -4,48 +4,49 @@ table.CalendarBody {
 }
 
 table.CalendarBody th {
-    background: #C9E9F0;
-    color: #0092B4;
-    font-size: 11px;
-    padding: 3px;
-    border: 1px solid #bbb;
-    border-top: none;
+    background: #ffffff;
+    color: rgb(13, 13, 13);
+    font-size: 12px;
+    padding: 4px;
+    border: 1px solid #d6d6d6;
+    font-weight: bold;
+    /*border-top: none;*/
 }
 
 table.CalendarBody tbody td {
     vertical-align: top;
-    width: 130px;
-    height: 130px;
-    border: 1px solid #bbb;
-    background: #e6e6e6;
+    width: 140px;
+    height: 140px;
+    border: 1px solid #d6d6d6;
+    background: #ffffff;
 }
 
 table.CalendarBody tbody td time {
-    font-size: .7em;
+    font-size: .9em;
     display: block;
     background: white;
-    padding: 2px;
-    text-align: right;
+    padding: 4px;
+    text-align: left;
     font-weight: bold;
 }
 
 table.CalendarBody tbody td.CBsuffix, table.CalendarBody tbody td.CBprefix {
-    background: white;
+    background: #F7F7F7;
 }
 
 table.CalendarBody tbody td div.event {
-    color: #355;
+    /*color: #cb6954;*/
     font-size: 12px;
     padding: 5px;
     line-height: 1em;
-    border-bottom: 1px solid #bbb;
-    background: #EEF25B;
+    border-bottom: 1px solid #c3d0e9;
+    background: #d8e6f9;
 }
 
 table.CalendarBody tbody td.today {
-    background: #d2d2d2;
+    background: #eaf5f5;
 }
 table.CalendarBody tbody td div.event a{
-    color: #2A2449;
+    color: #100f1e;
     text-decoration: none;
 }

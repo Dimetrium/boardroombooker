@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= TITLE ?></title>
     <link rel="stylesheet" type="text/css" media="all" href="<?= CSS ?>bootstrap.min.css">
-    <link rel="stylesheet" href="<?= CSS ?>CalendarHead.css"/>
     <link rel="stylesheet" href="<?= CSS ?>CalendarBody.css"/>
 
     <script type="text/javascript" src="<?= JS ?>jquery-1.11.2.min.js"></script>
