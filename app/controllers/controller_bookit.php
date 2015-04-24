@@ -14,7 +14,9 @@ class Controller_Bookit extends Controller
 
     function action_index ()
     {
-        $this->view->generate('bookit_view.php', 'template_view.php');
+        $data = $this->model->getUsers();
+        $this->view->generate('bookit_view.php', 'template_view.php', $data);
+        var_dump($data);
     }
 
     public function action_add()
