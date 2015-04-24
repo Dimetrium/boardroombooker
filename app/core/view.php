@@ -34,9 +34,6 @@ class View
             }
         }
 
-        // var_dump(!empty($data['0']['employee_id']));
-        // var_dump(isset($data['0']['employee_id']));
-        // var_dump('' !== $data['0']['employee_id']);
         if ( isset($data['0']['employee_id']) ) {
             foreach ( $data as $id=>$value ) {
                 $userList .= '<option value="'.$value['employee_id'].'">'.$value['employee_name'].'</option>';
