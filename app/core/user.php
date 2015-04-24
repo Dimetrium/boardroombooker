@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Class User
  */
@@ -9,6 +10,7 @@ class User
     private $role_id = '0';
     private $dbh = '';
     public $error = array();
+
     /**
      * Constructor
      */
@@ -21,10 +23,7 @@ class User
             $this->role_id = $_POST[ 'role_id' ];
         }
     }
-//public function setLogin($login)
-//{
-//    return $this->login = $login;
-//}
+
 // Registration part
     /**
      * @return bool
@@ -33,11 +32,13 @@ class User
     {
         if ( !preg_match( "/^[a-zA-Z0-9]+$/", $this->login ) ) {
             $this->error[ ] = "Логин может состоять только из букв английского алфавита и цифр";
+
             return FALSE;
         } else {
             return TRUE;
         }
     }
+
     /**
      * @return bool
      */
@@ -45,11 +46,13 @@ class User
     {
         if ( strlen( $this->login ) < 3 or strlen( $_POST[ 'employee_name' ] ) > 30 ) {
             $this->error[ ] = "Логин должен быть не меньше 3-х символов и не больше 30";
+
             return FALSE;
         } else {
             return TRUE;
         }
     }
+
     /**
      * @return bool
      * @throws Exception
@@ -66,11 +69,13 @@ SQL;
         $this->dbh = NULL;
         if ( $data > 0 ) {
             $this->error[ ] = "Пользователь с таким логином уже существует в базе данных";
+
             return FALSE;
         } else {
             return TRUE;
         }
     }
+
     /**
      * If check's ok - add user to DB
      *
@@ -99,6 +104,7 @@ SQL;
                 'employee_password' => $this->password,
                 'role_id' => $this->role_id ) );
             $this->dbh = NULL;
+
             return $this->dbh->lastInsertId();
         } else {
             return $this->error[ ] = "При регистрации произошли следующие ошибки:";
@@ -114,7 +120,7 @@ SQL;
         // Get record  from a DB at which login equals to the entered
         $query = <<<SQL
             SELECT
-            employee_id, employee_password
+            employee_id, employee_password, employee_name
             FROM xyz_employee
             WHERE employee_name = :employee_name LIMIT 1;
 SQL;
@@ -136,12 +142,16 @@ SQL;
             // Set cookies
             setcookie( "id", $data[ 'employee_id' ], time() + 60 * 60 * 24 * 30 );
             setcookie( "hash", $hash, time() + 60 * 60 * 24 * 30 );
+            setcookie( "name", $data[ 'employee_name' ], time() + 60 * 60 * 24 * 30 );
+
             return TRUE;
         } else {
-            $this->error[] = "Вы ввели неправильный логин/пароль";
-            return false;
+            $this->error[ ] = "Вы ввели неправильный логин/пароль";
+
+            return FALSE;
         }
     }
+
     /**
      * @return bool
      * @throws Exception
@@ -158,15 +168,35 @@ SQL;
             $data = $this->dbh->getRow( $query, array( 'employee_id' => intval( $_COOKIE[ 'id' ] ) ) );
             $this->dbh = NULL;
             if ( ( $data[ 'employee_hash' ] !== $_COOKIE[ 'hash' ] )
-                or ( $data[ 'employee_id' ] !== $_COOKIE[ 'id' ] )) {
+                or ( $data[ 'employee_id' ] !== $_COOKIE[ 'id' ] )
+            ) {
                 setcookie( "id", "", time() - 3600 * 24 * 30 * 12, "/" );
                 setcookie( "hash", "", time() - 3600 * 24 * 30 * 12, "/" );
-                return false;
+
+                return FALSE;
             } else {
-                return true;
+                return TRUE;
             }
+        } else {
+            return FALSE;
+        }
+
+    }
+
+    public function userLogout ()
+    {
+        if ( isset( $_COOKIE[ 'id' ] ) and isset( $_COOKIE[ 'hash' ] ) AND isset( $_COOKIE[ 'name' ] ) ) {
+            unset($_COOKIE['id']);
+            unset($_COOKIE['hash']);
+            unset($_COOKIE['name']);
+            setcookie('id', null, -1);
+            setcookie('hash', null, -1);
+            setcookie('name', null, -1);
         } else {
             return false;
         }
+
     }
+
+
 }

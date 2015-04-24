@@ -80,10 +80,10 @@ foreach ( $boardrooms as $room ) {
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-                        <i class="glyphicon glyphicon-user"></i> Root <span class="caret"></span></a>
+                        <i class="glyphicon glyphicon-user"></i> <?=$data[ 'user' ]?> <span class="caret"></span></a>
                     <ul id="g-account-menu" class="dropdown-menu" role="menu">
                         <li><a href="#">My Profile</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+                        <li><a href="main/logout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -96,7 +96,7 @@ foreach ( $boardrooms as $room ) {
         <div class="col-sm-2">
             <h3> Boardroom #<?= $_SESSION[ 'id_room' ]; ?></h3>
             <hr>
-            <form role="form" method="post" >
+            <form role="form" method="post" name="data_select" >
                 <select class="form-control" id="month">
                     <?= $select_month_control ?>
                 </select>

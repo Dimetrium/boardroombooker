@@ -110,4 +110,10 @@ SQL;
         return $showmonth . '/' . $current_day . '/' . $showyear;
     }
 
+    public function getUser()
+    {
+        $user = new User();
+        return $user->userGet();
+    }
+
 }

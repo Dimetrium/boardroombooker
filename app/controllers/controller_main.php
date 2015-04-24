@@ -26,6 +26,7 @@ class Controller_Main extends Controller
 
         $calendar->setStartOfWeek( 'Monday' );
 
+        $data[ 'user' ] = $_COOKIE[ 'name' ];
         $data[ 'boardrooms' ] = $this->model->getRooms();
         $data[ 'showCalendar' ] = $calendar->show( FALSE );
         $data[ 'getDate' ] = $calendar->getData();
@@ -35,6 +36,13 @@ class Controller_Main extends Controller
         } else {
             throw new Exception( 'Method "generate" expected array.' );
         }
+    }
+
+    function action_logout()
+    {
+        $user = new User();
+        $user->userLogout();
+        header('Location:'.BASE);
     }
 
 
