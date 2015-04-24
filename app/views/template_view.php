@@ -22,6 +22,6 @@
     </script>
 <script type="text/javascript" src="<?= JS ?>bootstrap.min.js"></script>
         <script type="text/javascript" src="<?= JS ?>calendar.js"></script>
-                <script type="text/javascript" src="<?= JS ?>datapicker.js"></script>
+        <script type="text/javascript" src="<?= JS ?>datapicker.js"></script>
 </body>
 </html>
