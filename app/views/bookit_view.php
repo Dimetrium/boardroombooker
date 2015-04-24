@@ -3,10 +3,10 @@
      * Override feedback icon position
      * See http://formvalidation.io/examples/adjusting-feedback-icon-position/
      */
-    /*#dateRangeForm .form-control-feedback {*/
-    /*    top: 0;*/
-    /*    right: -15px;*/
-    /*}*/
+    #dateRangeForm .form-control-feedback {
+        top: 0;
+        right: -15px;
+    }
 </style>
 <div class="container">
 <div class="row">
