@@ -28,40 +28,6 @@ foreach ( $boardrooms as $room ) {
 
 ?>
 
-<style>
-    .navbar-static-top {
-        margin-bottom: 20px;
-    }
-
-    i {
-        font-size: 18px;
-    }
-
-    footer {
-        margin-top: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        background-color: #efefef;
-    }
-
-    .nav > li .count {
-        position: absolute;
-        top: 10%;
-        right: 25%;
-        font-size: 10px;
-        font-weight: normal;
-        background: rgba(41, 200, 41, 0.75);
-        color: rgb(255, 255, 255);
-        line-height: 1em;
-        padding: 2px 4px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -ms-border-radius: 10px;
-        -o-border-radius: 10px;
-        border-radius: 10px;
-    }
-
-</style>
 <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
@@ -101,8 +67,8 @@ foreach ( $boardrooms as $room ) {
             </form>
             <ul class="nav nav-stacked">
                 <li><a href="bookit"><i class="glyphicon glyphicon-flash"></i> Book It!</a></li>
-                <li><a href="javascript:;"><i class="glyphicon glyphicon-link"></i> Employee List</a></li>
-                <li><a href="javascript:;"><i class="glyphicon glyphicon-list-alt"></i> Boardrooms</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-link"></i> Employee List</a></li>
+                <li><a href="j#"><i class="glyphicon glyphicon-list-alt"></i> Boardrooms</a></li>
                 <ul class="list-group">
                     <?= $rooms ?>
                 </ul>
