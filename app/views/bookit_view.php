@@ -1,17 +1,12 @@
-<!-- Include Bootstrap Datepicker -->
-<link rel="stylesheet" href="<?= CSS ?>datapicker.min.css"/>
-<script src="<?= JS ?>bootstrap-datepicker.min.js"></script>
-
-
 <style type="text/css">
     /**
      * Override feedback icon position
      * See http://formvalidation.io/examples/adjusting-feedback-icon-position/
      */
-    #dateRangeForm .form-control-feedback {
-        top: 0;
-        right: -15px;
-    }
+    /*#dateRangeForm .form-control-feedback {*/
+    /*    top: 0;*/
+    /*    right: -15px;*/
+    /*}*/
 </style>
 <div class="container">
 <div class="row">
@@ -130,19 +125,4 @@
         </fieldset>
 </form></div></div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('#dateRangePicker')
-            .datepicker({
-                onRender: function(date) {
-                    return date.valueOf() < now.valueOf() ? 'disabled' : '';
-                },
-                format: 'mm/dd/yyyy',
-                weekStart: 1,
-                startDate: '04/20/2015',
-                endDate: '12/30/2015',
-                daysOfWeekDisabled: [0, 7]
-            })
 
-    });
-</script>
