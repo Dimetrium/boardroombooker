@@ -38,13 +38,13 @@ SQL;
     public function getUsers()
     {
         $query = <<<SQL
-            SELECT employee_name
+            SELECT employee_name, employee_id
             FROM xyz_employee;
 SQL;
         $data = $this->dbh->getRows( $query );
         $this->dbh = NULL;
-
-            return $date;
+var_dump($data);
+            return $data;
 
     }
 
