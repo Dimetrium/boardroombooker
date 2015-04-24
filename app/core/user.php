@@ -31,7 +31,7 @@ class User
     private function checkLoginEmpty ()
     {
         if ( !preg_match( "/^[a-zA-Z0-9]+$/", $this->login ) ) {
-            $this->error[ ] = "Логин может состоять только из букв английского алфавита и цифр";
+            $this->error[ ] = "Username can only consist of letters of the alphabet and numbers";
 
             return FALSE;
         } else {
@@ -45,7 +45,7 @@ class User
     private function checkLoginLength ()
     {
         if ( strlen( $this->login ) < 3 or strlen( $_POST[ 'employee_name' ] ) > 30 ) {
-            $this->error[ ] = "Логин должен быть не меньше 3-х символов и не больше 30";
+            $this->error[ ] = "Username must be at least 3 characters and no more than 30";
 
             return FALSE;
         } else {
@@ -68,7 +68,7 @@ SQL;
         $data = $this->dbh->getRows( $query, array( 'employee_name' => $this->login ) );
         $this->dbh = NULL;
         if ( $data > 0 ) {
-            $this->error[ ] = "Пользователь с таким логином уже существует в базе данных";
+            $this->error[ ] = "Members with such password already exist in the database";
 
             return FALSE;
         } else {
@@ -92,7 +92,7 @@ SQL;
                 $this->checkUserExistName() )
         ) {
             $this->role_id = $role;
-            # Убераем лишние пробелы и делаем двойное шифрование
+
             $this->password = md5( md5( trim( $this->password ) ) );
             $query = <<<SQL
                 INSERT INTO
@@ -107,7 +107,7 @@ SQL;
 
             return $this->dbh->lastInsertId();
         } else {
-            return $this->error[ ] = "При регистрации произошли следующие ошибки:";
+            return $this->error[ ] = "When registering the following errors occurred:";
         }
     }
 // Authorization part
@@ -146,7 +146,7 @@ SQL;
 
             return TRUE;
         } else {
-            $this->error[ ] = "Вы ввели неправильный логин/пароль";
+            $this->error[ ] = "You have entered incorrect login or password";
 
             return FALSE;
         }
