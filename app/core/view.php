@@ -33,9 +33,9 @@ class View
                 $rooms .= '<li class="list-group-item"><a href="main" onClick="DoPost(' . $room . ')">Boardroom # ' . $room . '</a></li>';
             }
         }
-        if (null !== $boardrooms){
-            foreach ( $boardrooms as $room ) {
-                $rooms .= '<li class="list-group-item"><a href="main" onClick="DoPost(' . $room . ')">Boardroom # ' . $room . '</a></li>';
+        if (null !== $data){
+            foreach ( $data as $id=>$name ) {
+                $userList .= '<option value="'.$id.'">'.$name.'</option>';
             }
         }
 
