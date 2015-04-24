@@ -9,6 +9,7 @@ class Model_Bookit extends Model
       
       $start_date = $_POST['date'].' '.$_POST['start'].':00';
       $end_date = $_POST['date'].' '.$_POST['end'].':00';
+      $employee_id = $_POST['employee_id']
 
       $start = strtotime($start_date);
       $end = strtotime($end_date);
@@ -16,10 +17,11 @@ class Model_Bookit extends Model
       $room_id = $_SESSION['id_room'];
       session_write_close();
       $query = <<<SQL
-            INSERT INTO xyz_appointments (app_start, app_end, id_room)
-            VALUES (:start, :end, :room_id); 
+            INSERT INTO xyz_appointments (employee_id, app_start, app_end, id_room)
+            VALUES (:employee_id, :start, :end, :room_id); 
 SQL;
       $this->dbh->insertRow($query, array(
+        'employee_id' => $employee_id,
         'start'=>$start,
         'end' => $end,
         'room_id' => $room_id
