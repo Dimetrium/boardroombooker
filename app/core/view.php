@@ -33,9 +33,9 @@ class View
                 $rooms .= '<li class="list-group-item"><a href="main" onClick="DoPost(' . $room . ')">Boardroom # ' . $room . '</a></li>';
             }
         }
-        var_dump($data);
+
         var_dump($data['0']['employee_id']);
-        if ( array_key_exists('employee_id', $data ) ) {
+        if ( !empty($data['0']['employee_id']) ) {
             foreach ( $data as $id=>$value ) {
                 $userList .= '<option value="'.$value['employee_id'].'">'.$value['employee_name'].'</option>';
             }
