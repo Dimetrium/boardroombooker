@@ -34,8 +34,8 @@ class View
             }
         }
         if (null !== $data){
-            foreach ( $data as $id=>$name ) {
-                $userList .= '<option value="'.$id.'">'.$name.'</option>';
+            foreach ( $data as $id=>$value ) {
+                $userList .= '<option value="'.$value['employee_id'].'">'.$value['employee_name'].'</option>';
             }
         }
 
