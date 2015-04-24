@@ -6,7 +6,6 @@ class Model_Bookit extends Model
     public function addEvent ()
     {
 
-      
       $start_date = $_POST['date'].' '.$_POST['start'].':00';
       $end_date = $_POST['date'].' '.$_POST['end'].':00';
       $employee_id = $_POST['employee_id'];
@@ -31,7 +30,7 @@ SQL;
       header('Location:'.BASE);
     }
 
-    public function del ( $month, $year )
+    public function delEvent ( $month, $year )
     {
     }
     
