@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?= CSS ?>CalendarBody.css"/>
 
     <script type="text/javascript" src="<?= JS ?>jquery-1.11.2.min.js"></script>
+
     <script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
 </head>
 <body>
@@ -20,5 +21,6 @@
         }
     </script>
 <script type="text/javascript" src="<?= JS ?>bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?= JS ?>calendar.js"></script>
 </body>
 </html>
