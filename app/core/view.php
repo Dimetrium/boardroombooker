@@ -25,7 +25,7 @@ $next_month_link = ( $month != 12 ? $month + 1 : 1 ) . '/' . ( $month != 12 ? $y
 /* "previous month" control */
 $previous_month_link = ( $month != 1 ? $month - 1 : 12 ) . '/' . ( $month != 1 ? $year : $year - 1 );
 /* booardroom list */
-if (isset($boardroom))
+if ($boardroom)
 {
 foreach ( $boardrooms as $room ) {
     $rooms .= '<li class="list-group-item"><a href="main" onClick="DoPost(' . $room . ')">Boardroom # ' . $room . '</a></li>';
