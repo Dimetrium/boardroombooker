@@ -4,8 +4,9 @@
         <div class="col-sm-2">
             <h3>{{BOARDROOM}} #<?= $_SESSION[ 'id_room' ]; ?></h3>
             <hr>
-            <button type="submit" name="lang" method="post" value="ru">Ru</button>
-            <button type="submit" name="lang" method="post" value="en">En</button>
+            
+            <button type="submit" name="lang" value="ru" formaction="main" formmethod="POST" class="btn btn-primary">Ru</button>
+            <button type="submit" name="lang" value="en" formaction="main" formmethod="POST" class="btn btn-primary">En</button>
             <form role="form" method="post" name="data_select">
                 <select class="form-control" id="month">
                     <?= $select_month_control ?>
