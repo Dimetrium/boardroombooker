@@ -12,10 +12,9 @@ class Model
      * Constructor
      * Get instance of DBConnect class
      */
-    public function __construct ( $param_one = null)
+    public function __construct ( $param_one = NULL )
     {
-        if (null !== $param_one)
-        {
+        if ( NULL !== $param_one ) {
             $this->$param_one = $param_one;
         }
 

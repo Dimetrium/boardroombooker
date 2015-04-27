@@ -2,20 +2,52 @@
 
 <ISTRINGTABLE LANG="en">
     <ISTRING>
-        <KEY>{{BY_GENRE}}</KEY>
-        <VALUE>By Genre</VALUE>
+        <KEY>{{BOARDROOM}}</KEY>
+        <VALUE>Boardroom</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{BY_AUTHORS}}</KEY>
-        <VALUE>By Authors</VALUE>
+        <KEY>{{BOOK_IT}}</KEY>
+        <VALUE> Book It!</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{SIGN_UP}}</KEY>
-        <VALUE>Sign in\Sign Up</VALUE>
+        <KEY>{{BOARDROOMS}}</KEY>
+        <VALUE> Boardrooms</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{Create Account}}</KEY>
-        <VALUE>Create Account</VALUE>
+        <KEY>{{EMPLOYEE_LIST}}</KEY>
+        <VALUE> Employee List</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{ADD_NEW_EMPLOYEE}}</KEY>
+        <VALUE>Add a New Employee</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{REG_NEW_EMPLOYEE}}</KEY>
+        <VALUE>Register New Employee</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{LOGOUT}}</KEY>
+        <VALUE> Logout</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{EDIT}}</KEY>
+        <VALUE>Edit</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{REMOVE}}</KEY>
+        <VALUE>Remove</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{REMOVE_CONFIRM}}</KEY>
+        <VALUE>Are you sure you want to delete this contact?</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{PREV_MONTH}}</KEY>
+        <VALUE>Prev</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{NEXT_MONTH}}</KEY>
+        <VALUE>Next</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{Username}}</KEY>
@@ -26,7 +58,19 @@
         <VALUE>Password</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{Login}}</KEY>
+        <KEY>{{Role}}</KEY>
+        <VALUE>Role</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Register}}</KEY>
+        <VALUE>Register</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{NAME}}</KEY>
+        <VALUE>Name</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{LOGIN}}</KEY>
         <VALUE>Login</VALUE>
     </ISTRING>
     <ISTRING>
@@ -35,42 +79,70 @@
     </ISTRING>
     <ISTRING>
         <KEY>{{MAIN_H2}}</KEY>
-        <VALUE>Boardroom Booker</VALUE>
+        <VALUE>Boardroom Booking</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{PRODUCT_BUTTON_MAIN}}</KEY>
-        <VALUE>VIEW DETAILS</VALUE>
+        <KEY>{{EDIT_EMAIL}}</KEY>
+        <VALUE>Edit E-mail</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{ADD TO CART}}</KEY>
-        <VALUE>ADD TO CART</VALUE>
+        <KEY>{{OF_EMPLOYEE}}</KEY>
+        <VALUE>of employee</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{QTY}}</KEY>
-        <VALUE>Qty</VALUE>
+        <KEY>{{UPD_BTN}}</KEY>
+        <VALUE>Update</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{AUTHOR}}</KEY>
-        <VALUE>Author</VALUE>
+        <KEY>{{Booked_for}}</KEY>
+        <VALUE>1. Booked for:</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{GENRE}}</KEY>
-        <VALUE>Genre</VALUE>
+        <KEY>{{Booked_date}}</KEY>
+        <VALUE>2. I would like to book this meeting:</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{ALL_BOOK_SOLID}}</KEY>
-        <VALUE>All books are sold</VALUE>
+        <KEY>{{Booked_time}}</KEY>
+        <VALUE>3. Specify what the time and end of the meeting.</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{SHORT_DESCR}}</KEY>
-        <VALUE>This is a short description of the store.</VALUE>
+        <KEY>{{Booked_specifics}}</KEY>
+        <VALUE>4. Enter the specifics for the meeting.</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{STORE_COPYR}}</KEY>
-        <VALUE>2015 Book Shop.</VALUE>
+        <KEY>{{IS_Recurring}}</KEY>
+        <VALUE>5. Is this going to be a recurring event?</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{PAY_METH}}</KEY>
-        <VALUE>SUPPORTED PAYMENT METHODS</VALUE>
+        <KEY>{{YES}}</KEY>
+        <VALUE>Yes</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{NO}}</KEY>
+        <VALUE>No</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{specRecurring}}</KEY>
+        <VALUE>6. If it is recurring, specify weekly, bi-weekly, or monthly.</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Weekly}}</KEY>
+        <VALUE>Weekly</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Bi-weekly}}</KEY>
+        <VALUE>Bi-weekly</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Monthly}}</KEY>
+        <VALUE>Monthly</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Recurring_info}}</KEY>
+        <VALUE>If weekly or bi-weekly, specify the number of weeks for it to keep recurring. If monthly, specify the number of months. (If you choose "be-weekly" and put in an odd number of week, the computer will round down.)</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Duration}}</KEY>
+        <VALUE>Duration (max 4 weeks)</VALUE>
     </ISTRING>
 </ISTRINGTABLE>

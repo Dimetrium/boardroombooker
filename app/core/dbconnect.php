@@ -87,7 +87,7 @@ class DBConnect
         }
     }
 
-    public function lastInsertId ()
+    public function lastInsertedId ()
     {
         return $this->dbh->lastInsertId();
     }

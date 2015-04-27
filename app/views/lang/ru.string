@@ -1,21 +1,53 @@
 <?xml version="1.0"?>
 
-<ISTRINGTABLE LANG="ru">
+<ISTRINGTABLE LANG="en">
     <ISTRING>
-        <KEY>{{BY_GENRE}}</KEY>
-        <VALUE>По жанрам</VALUE>
+        <KEY>{{BOARDROOM}}</KEY>
+        <VALUE>Зал Pаседаний</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{BY_AUTHORS}}</KEY>
-        <VALUE>По авторам</VALUE>
+        <KEY>{{BOOK_IT}}</KEY>
+        <VALUE> Бронирование</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{SIGN_UP}}</KEY>
-        <VALUE>Зарагистрироваться \ Вход</VALUE>
+        <KEY>{{BOARDROOMS}}</KEY>
+        <VALUE> Залы заседаний</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{Create Account}}</KEY>
-        <VALUE>Создать Учетную Запись</VALUE>
+        <KEY>{{EMPLOYEE_LIST}}</KEY>
+        <VALUE> Список сотрудников</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{ADD_NEW_EMPLOYEE}}</KEY>
+        <VALUE>Добавить Нового Сотрудника</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{REG_NEW_EMPLOYEE}}</KEY>
+        <VALUE>Регистрация Нового Сотрудника</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{LOGOUT}}</KEY>
+        <VALUE> Выйти</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{EDIT}}</KEY>
+        <VALUE>Редактировать</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{REMOVE}}</KEY>
+        <VALUE>Удалять</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{REMOVE_CONFIRM}}</KEY>
+        <VALUE>Вы уверены, что хотите удалить этот контакт?</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{PREV_MONTH}}</KEY>
+        <VALUE>Предыдущий</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{NEXT_MONTH}}</KEY>
+        <VALUE>Следующий</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{Username}}</KEY>
@@ -26,55 +58,87 @@
         <VALUE>Пароль</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{Login}}</KEY>
+        <KEY>{{Role}}</KEY>
+        <VALUE>Роль</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{NAME}}</KEY>
+        <VALUE>Имя</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{LOGIN}}</KEY>
         <VALUE>Логин</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{Cancel}}</KEY>
-        <VALUE>Отмена</VALUE>
+        <KEY>{{Register}}</KEY>
+        <VALUE>Зарегистрировать</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{MAIN_H2}}</KEY>
-        <VALUE>Рекомендуемые</VALUE>
+        <VALUE>Заказ Зала Заседаний</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{PRODUCT_BUTTON_MAIN}}</KEY>
-        <VALUE>ДЕТАЛЬНО</VALUE>
+        <KEY>{{EDIT_EMAIL}}</KEY>
+        <VALUE>Редактировать E-mail</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{ADD TO CART}}</KEY>
-        <VALUE>ДОБАВИТЬ В КОРЗИНУ</VALUE>
+        <KEY>{{OF_EMPLOYEE}}</KEY>
+        <VALUE>сотрудника</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{QTY}}</KEY>
-        <VALUE>Кол-во</VALUE>
+        <KEY>{{UPD_BTN}}</KEY>
+        <VALUE>Изменить</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{AUTHOR}}</KEY>
-        <VALUE>Автор</VALUE>
+        <KEY>{{Booked_for}}</KEY>
+        <VALUE>1. Заказанный для:</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{GENRE}}</KEY>
-        <VALUE>Жанр</VALUE>
+        <KEY>{{Booked_date}}</KEY>
+        <VALUE>2. Я хотел бы заказать эту встречу:</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{PRODUCT_BUTTON_MAIN}}</KEY>
-        <VALUE>ДЕТАЛЬНО</VALUE>
+        <KEY>{{Booked_time}}</KEY>
+        <VALUE>3. Укажите время начала и конец встречи.</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{ALL_BOOK_SOLID}}</KEY>
-        <VALUE>Все книги проданы</VALUE>
+        <KEY>{{Booked_specifics}}</KEY>
+        <VALUE>4. Введите описание для встречи.</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{SHORT_DESCR}}</KEY>
-        <VALUE>Это краткое описание магазина</VALUE>
+        <KEY>{{IS_Recurring}}</KEY>
+        <VALUE>5. Будет повторяющееся событие?</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{STORE_COPYR}}</KEY>
-        <VALUE>2015 Book Shop.</VALUE>
+        <KEY>{{YES}}</KEY>
+        <VALUE>Да</VALUE>
     </ISTRING>
     <ISTRING>
-        <KEY>{{PAY_METH}}</KEY>
-        <VALUE>ПОДДЕРЖИВАЕМЫЕ СПОСОБЫ ОПЛАТЫ</VALUE>
+        <KEY>{{NO}}</KEY>
+        <VALUE>Нет</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{specRecurring}}</KEY>
+        <VALUE>6. Если это повторяется, то укажите еженедельно, каждые две недели, или ежемесячно.</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Weekly}}</KEY>
+        <VALUE>Еженедельно</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Bi-weekly}}</KEY>
+        <VALUE>Каждые две недели</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Monthly}}</KEY>
+        <VALUE>Ежемесячно</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Recurring_info}}</KEY>
+        <VALUE>Если еженедельно или каждые две недели, определите число недель для него, чтобы продолжать повторяться. Если ежемесячно, определите число месяцев. (Если Вы выберете "быть" и вставить нечетное число недели, то компьютер округлит в меньшую сторону.)</VALUE>
+    </ISTRING>
+    <ISTRING>
+        <KEY>{{Duration}}</KEY>
+        <VALUE>Продолжительность (макс. 4 недели)</VALUE>
     </ISTRING>
 </ISTRINGTABLE>

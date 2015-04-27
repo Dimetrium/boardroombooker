@@ -26,8 +26,8 @@ class Router
         $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
         $routes = explode( '/', $_SERVER[ 'REQUEST_URI' ] );
 
-        $routes = array_slice($routes, 2);
-        $segments = array_slice($segments, 2);
+//        $routes = array_slice($routes, 2);
+//        $segments = array_slice($segments, 2);
 
         if ( !empty( $routes[ 1 ] ) ) {
             $controller_name = $routes[ 1 ];
@@ -81,7 +81,7 @@ class Router
          * and call action
          */
 
-        $controller = new $controller_name( $param_one, $param_two);
+        $controller = new $controller_name( $param_one, $param_two );
         $action = $action_name;
 
         if ( method_exists( $controller, $action ) ) {

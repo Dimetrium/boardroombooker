@@ -43,7 +43,9 @@ class Calendar
             $this->now = getdate();
         }
     }
-    public function getData(){
+
+    public function getData ()
+    {
         return $this->now;
     }
 
@@ -72,14 +74,6 @@ class Calendar
         } while ( $working_date < $end_date + 1 );
 
         $htmlCount++;
-    }
-
-    /**
-     * Clear all daily events for the calendar
-     */
-    public function clearDailyHtml ()
-    {
-        $this->dailyHtml = array();
     }
 
     /**
@@ -120,9 +114,9 @@ class Calendar
         $no_days = date( 't', strtotime( $this->now[ 'year' ] . '-' . $this->now[ 'mon' ] . '-01' ) );
 
         $out = '<table cellpadding="0" cellspacing="0" class="CalendarBody"><thead><tr>';
-            for ( $i = 0; $i < 7; $i++ ) {
-                $out .= '<th>' . $wdays[ $i ] . '</th>';
-            }
+        for ( $i = 0; $i < 7; $i++ ) {
+            $out .= '<th>' . $wdays[ $i ] . '</th>';
+        }
         $out .= "</tr></thead>\n<tbody>\n<tr>";
 
         $wday = ( $wday + 7 ) % 7;
@@ -151,9 +145,9 @@ class Calendar
 
             if ( is_array( $dHtml_arr ) ) {
                 foreach ( $dHtml_arr as $dHtml ) {
-                    if ( $dHtml <= date('n')){
-                        $out .= '<div class="event"><a href="#" onclick="myFunction()">Start: ' . $dHtml . '</a></div>';
-                    }else {
+                    if ( $dHtml <= date( 'n' ) ) {
+                        $out .= '<div class="event"><a href="#" onclick="myFunction('.$appointment_id.')">Start: ' . $dHtml . '</a></div>';
+                    } else {
                         $out .= '<div class="event">Fin: ' . $dHtml . '</div>';
                     }
                 }

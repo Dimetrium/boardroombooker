@@ -64,7 +64,7 @@ SQL;
         session_write_close();
 
         $query = <<<SQL
-            SELECT app_start, app_end, id_room
+            SELECT app_start, app_end, id_room, appointment_id
             FROM xyz_appointments
             WHERE id_room = :id
 SQL;
@@ -74,13 +74,12 @@ SQL;
         ) );
         $dbh = NULL;
         foreach ( $result as $key => $val ) {
-          if (!empty($val['app_start']) || !empty($val['app_end']))
-          {
-            $time =  date( 'H:i', $val[ 'app_start' ] ) . '-' . date( 'H:i', $val[ 'app_end' ] );
-            $eventDate = date( 'm/d/Y', $val[ 'app_start' ] );
-          }
+            if ( !empty( $val[ 'app_start' ] ) || !empty( $val[ 'app_end' ] ) ) {
+                $time = date( 'H:i', $val[ 'app_start' ] ) . '-' . date( 'H:i', $val[ 'app_end' ] );
+                $eventDate = date( 'm/d/Y', $val[ 'app_start' ] );
+            }
 
-          $event[$key] = [ $time => $eventDate ];
+            $event[ $val['appointment_id'] ] = [ $time => $eventDate ];
 
         }
         return $event;
@@ -110,9 +109,10 @@ SQL;
         return $showmonth . '/' . $current_day . '/' . $showyear;
     }
 
-    public function getUser()
+    public function getUser ()
     {
         $user = new User();
+
         return $user->userGet();
     }
 

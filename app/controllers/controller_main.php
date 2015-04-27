@@ -26,7 +26,6 @@ class Controller_Main extends Controller
 
         $calendar->setStartOfWeek( 'Monday' );
 
-        $data[ 'user' ] = $_COOKIE[ 'name' ];
         $data[ 'boardrooms' ] = $this->model->getRooms();
         $data[ 'showCalendar' ] = $calendar->show( FALSE );
         $data[ 'getDate' ] = $calendar->getData();

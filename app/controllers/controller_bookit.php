@@ -14,13 +14,16 @@ class Controller_Bookit extends Controller
 
     function action_index ()
     {
+
         $data = $this->model->getUsers();
         $this->view->generate('bookit_view.php', 'template_view.php', $data);
+
     }
 
     public function action_add()
     {
-        $this->model->addEvent();
+
+        return $this->model->addEvent();
 
     }
 

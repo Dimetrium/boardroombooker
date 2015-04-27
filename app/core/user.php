@@ -7,7 +7,6 @@ class User
 {
     private $login = '';
     private $password = '';
-    private $role_id = '0';
     private $dbh = '';
     public $error = array();
 
@@ -17,14 +16,13 @@ class User
     public function __construct ()
     {
         $this->dbh = DBConnect::getInstance();
-        if ( isset( $_POST[ 'username' ] ) && isset( $_POST[ 'password' ] ) ) {
-            $this->login = $_POST[ 'username' ];
-            $this->password = $_POST[ 'password' ];
-            $this->role_id = $_POST[ 'role_id' ];
+
+        if ( isset( $_POST[ 'login' ] ) && isset( $_POST[ 'password' ] ) ) {
+            $this->login = $_POST[ 'login' ];
+            $this->password = md5( md5( trim( $_POST[ 'password' ] ) ) );
         }
     }
 
-// Registration part
     /**
      * @return bool
      */
@@ -44,7 +42,7 @@ class User
      */
     private function checkLoginLength ()
     {
-        if ( strlen( $this->login ) < 3 or strlen( $_POST[ 'employee_name' ] ) > 30 ) {
+        if ( strlen( $this->login ) < 3 or strlen( $_POST[ 'employee_login' ] ) > 30 ) {
             $this->error[ ] = "Username must be at least 3 characters and no more than 30";
 
             return FALSE;
@@ -63,9 +61,9 @@ class User
             SELECT COUNT
             (employee_id)
             FROM xyz_employee
-            WHERE employee_name = :employee_name;
+            WHERE employee_login = :employee_login;
 SQL;
-        $data = $this->dbh->getRows( $query, array( 'employee_name' => $this->login ) );
+        $data = $this->dbh->getRows( $query, array( 'employee_login' => $this->login ) );
         $this->dbh = NULL;
         if ( $data > 0 ) {
             $this->error[ ] = "Members with such password already exist in the database";
@@ -84,33 +82,18 @@ SQL;
      * @return string last Insert Id
      * @throws Exception
      */
-    public function userAdd ( $role )
+    public function userCheck (  )
     {
         if ( !FALSE == (
                 $this->checkLoginEmpty() ||
                 $this->checkLoginLength() ||
-                $this->checkUserExistName() )
-        ) {
-            $this->role_id = $role;
+                $this->checkUserExistName() )) {
 
-            $this->password = md5( md5( trim( $this->password ) ) );
-            $query = <<<SQL
-                INSERT INTO
-                xyz_employee
-                SET employee_name = :employee_name, employee_password = :employee_password, role_id = :role_id;
-SQL;
-            $this->dbh->insertRow( $query, array(
-                'employee_name' => $this->login,
-                'employee_password' => $this->password,
-                'role_id' => $this->role_id ) );
-            $this->dbh = NULL;
-
-            return $this->dbh->lastInsertId();
-        } else {
-            return $this->error[ ] = "When registering the following errors occurred:";
+                return true;
         }
+        return false;
     }
-// Authorization part
+
     /**
      * @return bool
      * @throws Exception
@@ -120,11 +103,11 @@ SQL;
         // Get record  from a DB at which login equals to the entered
         $query = <<<SQL
             SELECT
-            employee_id, employee_password, employee_name
+            employee_id, employee_password, employee_login, employee_name
             FROM xyz_employee
-            WHERE employee_name = :employee_name LIMIT 1;
+            WHERE employee_login = :employee_login LIMIT 1;
 SQL;
-        $data = $this->dbh->getRow( $query, array( 'employee_name' => $this->login ) );
+        $data = $this->dbh->getRow( $query, array( 'employee_login' => $this->login ) );
         //  Is password compare ...
         if ( $data[ 'employee_password' ] === $this->password ) {
             // ...generate a random hash,
@@ -153,6 +136,8 @@ SQL;
     }
 
     /**
+     * Checking of existing user cookies
+     *
      * @return bool
      * @throws Exception
      */
@@ -160,7 +145,7 @@ SQL;
     {
         if ( isset( $_COOKIE[ 'id' ] ) and isset( $_COOKIE[ 'hash' ] ) ) {
             $query = <<<SQL
-                SELECT employee_hash, employee_id, employee_name
+                SELECT employee_hash, employee_id
                 FROM xyz_employee
                 WHERE employee_id = :employee_id
                 LIMIT 1;
@@ -180,25 +165,20 @@ SQL;
         } else {
             return FALSE;
         }
-
     }
 
     public function userLogout ()
     {
         if ( isset( $_COOKIE[ 'id' ] ) and isset( $_COOKIE[ 'hash' ] ) AND isset( $_COOKIE[ 'name' ] ) ) {
-            unset($_COOKIE['id']);
-            unset($_COOKIE['hash']);
-            unset($_COOKIE['name']);
-            setcookie( "id", null, time() - 3600 * 24 * 30 * 12, BASE );
-            setcookie( "hash", null, time() - 3600 * 24 * 30 * 12, BASE );
-            setcookie( "name", null, time() - 3600 * 24 * 30 * 12, BASE );
+            unset( $_COOKIE[ 'id' ] );
+            unset( $_COOKIE[ 'hash' ] );
+            unset( $_COOKIE[ 'name' ] );
+            setcookie( "id", NULL, time() - 3600 * 24 * 30 * 12, BASE );
+            setcookie( "hash", NULL, time() - 3600 * 24 * 30 * 12, BASE );
+            setcookie( "name", NULL, time() - 3600 * 24 * 30 * 12, BASE );
         } else {
-            return false;
+            return FALSE;
         }
-
     }
-    
-
-
 
 }
