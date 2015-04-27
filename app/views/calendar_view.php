@@ -8,6 +8,10 @@
                 <button type="submit" name="lang" value="ru" form="lang" class="btn btn-primary">Ru</button>
                 <button type="submit" name="lang" value="en" orm="lang" class="btn btn-primary">En</button>
             </form>
+            <form role="form" method="post" id="start_day">
+                <button type="submit" name="start_day" value="Monday" form="start_day" class="btn btn-primary">Mon</button>
+                <button type="submit" name="start_day" value="Sunday" form="start_day" class="btn btn-primary">Sun</button>
+            </form>
             
             <form role="form" method="post" name="data_select">
                 <select class="form-control" name="month">
