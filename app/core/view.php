@@ -76,8 +76,10 @@ class View
         if(isset($_POST['lang']))
         {
             $lang = $_POST['lang'];
+        }else{
+                    $lang = 'ru';
         }
-        $lang = 'ru';
+
         $language = new Lang( $lang );
 
         // Replaces chars according to the chosen language
