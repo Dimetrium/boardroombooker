@@ -8,10 +8,10 @@
             <button type="submit" name="lang" value="ru" formaction="/main" formmethod="POST" class="btn btn-primary">Ru</button>
             <button type="submit" name="lang" value="en" formaction="/main" formmethod="POST" class="btn btn-primary">En</button>
             <form role="form" method="post" name="data_select">
-                <select class="form-control" id="month">
+                <select class="form-control" name="month">
                     <?= $select_month_control ?>
                 </select>
-                <select class="form-control" id="year">
+                <select class="form-control" name="year">
                     <?= $select_year_control ?>
                 </select>
                 <button type="submit" class="btn btn-primary btn-block"/>
