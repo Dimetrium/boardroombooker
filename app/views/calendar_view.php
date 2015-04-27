@@ -4,7 +4,7 @@
         <div class="col-sm-2">
             <h3>{{BOARDROOM}} #<?= $_SESSION[ 'id_room' ]; ?></h3>
             <hr>
-            <form role="form" method="post" id="lang"
+            <form role="form" method="post" id="lang">
                 <button type="submit" name="lang" value="ru" form="lang" class="btn btn-primary">Ru</button>
                 <button type="submit" name="lang" value="en" orm="lang" class="btn btn-primary">En</button>
             </form>
