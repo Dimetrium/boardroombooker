@@ -146,7 +146,8 @@ class Calendar
             if ( is_array( $dHtml_arr ) ) {
                 foreach ( $dHtml_arr as $dHtml ) {
                     if ( $dHtml <= date( 'n' ) ) {
-                        $out .= '<div class="event"><a href="#" onclick="myFunction('.$appointment_id.')">Start: ' . $dHtml . '</a></div>';
+                        ..$out .= '<div class="event"><a href="#" onclick="myFunction('.$appointment_id.')">Start: ' . $dHtml . '</a></div>';
+                        $out .= '<div class="event"><a href="#" onclick="myFunction()">Start: ' . $dHtml . '</a></div>';
                     } else {
                         $out .= '<div class="event">Fin: ' . $dHtml . '</div>';
                     }
