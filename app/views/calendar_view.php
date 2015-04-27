@@ -8,7 +8,7 @@
                 <button type="submit" name="lang" value="ru" form="lang" class="btn btn-primary">Ru</button>
                 <button type="submit" name="lang" value="en" orm="lang" class="btn btn-primary">En</button>
             </form>
-            <?php var_dump($_POST);?>
+            
             <form role="form" method="post" name="data_select">
                 <select class="form-control" name="month">
                     <?= $select_month_control ?>
