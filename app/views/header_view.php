@@ -7,9 +7,10 @@
             <a class="navbar-brand" href="#">{{MAIN_H2}}</a>
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <button type="submit" name="lang" method="post" value="ru">Ru</a>
+                            <button type="submit" name="lang" method="post" value="ru">Ru</a>
                 <button type="submit" name="lang" method="post" value="en">En</a>
+            <ul class="nav navbar-nav navbar-right">
+
                 <li class="dropdown">
                     <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
                         <i class="glyphicon glyphicon-user"></i> <?= $_COOKIE[ 'name' ] ?> <span
