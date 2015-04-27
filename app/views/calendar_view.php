@@ -13,7 +13,7 @@
                 <button type="submit" name="start_day" value="Monday" form="start_day" class="btn btn-primary">Mon</button>
                 <button type="submit" name="start_day" value="Sunday" form="start_day" class="btn btn-primary">Sun</button>
             </form>
-            
+            <br>
             <form role="form" method="post" name="data_select">
                 <select class="form-control" name="month">
                     <?= $select_month_control ?>
