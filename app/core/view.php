@@ -73,11 +73,16 @@ class View
 
         // TODO: write language switch toggle...
         var_dump($_POST['lang']);
+        
         if(isset($_POST['lang']))
         {
+            
             $lang = $_POST['lang'];
+            setcookie( "lang", $_POST['lang'], time() + 60 * 60 * 24 * 30, BASE );
+            
         }else{
-                    $lang = 'ru';
+            
+            $lang = $_COOKIE['lang'];
         }
 
         $language = new Lang( $lang );
