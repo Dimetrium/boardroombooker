@@ -24,7 +24,27 @@ class Controller_Main extends Controller
           }
         }
 
-        $calendar->setStartOfWeek( 'Monday' );
+////////////////////////////
+
+    if(!isset($_COOKIE['start_day']))
+        {
+            $_COOKIE['start_day'] = 'Monday';
+        }
+        
+    if(isset($_POST['start_day']))
+        {
+            
+            $start_day = $_POST['start_day'];
+            setcookie( "start_day", $_POST['start_day'], time() + 60 * 60 * 24 * 30, BASE );
+            
+        }else{
+            
+            $start_day = $_COOKIE['start_day'];
+        }
+
+//////////////////////////////
+
+        $calendar->setStartOfWeek( $start_day );
 
         $data[ 'boardrooms' ] = $this->model->getRooms();
         $data[ 'showCalendar' ] = $calendar->show( FALSE );
