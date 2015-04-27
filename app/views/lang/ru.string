@@ -3,7 +3,7 @@
 <ISTRINGTABLE LANG="en">
     <ISTRING>
         <KEY>{{BOARDROOM}}</KEY>
-        <VALUE>Зал Pаседаний</VALUE>
+        <VALUE>Зал Заседаний</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{BOOK_IT}}</KEY>
