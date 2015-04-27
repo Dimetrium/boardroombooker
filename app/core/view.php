@@ -72,7 +72,7 @@ class View
         ob_end_clean();
 
         // TODO: write language switch toggle...
-        var_dump($_POST['lang']);
+        setcookie( "lang", 'en', time() + 60 * 60 * 24 * 30, BASE );
         
         if(isset($_POST['lang']))
         {
