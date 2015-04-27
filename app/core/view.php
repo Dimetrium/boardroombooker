@@ -72,9 +72,10 @@ class View
         ob_end_clean();
 
         // TODO: write language switch toggle...
+        var_dump($_POST['lang']);
         if(isset($_POST['lang']))
         {
-                    $lang = $_POST['lang'];
+            $lang = $_POST['lang'];
         }
         $lang = 'ru';
         $language = new Lang( $lang );
