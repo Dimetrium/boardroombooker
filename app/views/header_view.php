@@ -8,6 +8,8 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
+                <a href="#" onClick="DoPost(ru)">Ru</a>
+                <a href="#" onClick="DoPost(en)">En</a>
                 <li class="dropdown">
                     <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
                         <i class="glyphicon glyphicon-user"></i> <?= $_COOKIE[ 'name' ] ?> <span
