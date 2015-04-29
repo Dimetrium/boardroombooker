@@ -4,7 +4,7 @@ class Controller_Employee extends Controller
 {
     private $employee_id;
 
-    function __construct ( $param_one = NULL, $param_two = NULL )
+    function __construct ( $param_one = null, $param_two = null )
     {
         if ( $param_one ) {
             $this->employee_id = $param_one;
@@ -26,7 +26,7 @@ class Controller_Employee extends Controller
     function action_add ()
     {
 
-        if (true == $this->user->userCheck()){
+        if ( true == $this->user->userCheck() ) {
             $this->model->userAdd();
         }
         header( 'Location:' . BASE . 'employee' );
@@ -43,15 +43,15 @@ class Controller_Employee extends Controller
 
     function action_edit ()
     {
-        if(isset($_POST['employee_email']))
-        {
+        if ( isset( $_POST[ 'employee_email' ] ) ) {
 
             $this->model->userEdit( $this->employee_id );
+
             return header( 'Location:' . BASE . 'employee' );
 
         }
 
-        $users = $this->model->getUser($this->employee_id);
+        $users = $this->model->getUser( $this->employee_id );
 
         return $this->view->generate( 'edit_view.php', 'template_view.php', $users );
 

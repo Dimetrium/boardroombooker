@@ -10,14 +10,13 @@ class Router
     static function start ()
     {
 
-
         /**
          * default controller and action
          */
         $controller_name = 'Main';
         $action_name = 'index';
-        $param_one = NULL;
-        $param_two = NULL;
+        $param_one = null;
+        $param_two = null;
 
         /**
          * parse URI and get controller and action names
@@ -26,8 +25,8 @@ class Router
         $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
         $routes = explode( '/', $_SERVER[ 'REQUEST_URI' ] );
 
-        $routes = array_slice($routes, 2);
-        $segments = array_slice($segments, 2);
+//        $routes = array_slice($routes, 2);
+//        $segments = array_slice($segments, 2);
 
         if ( !empty( $routes[ 1 ] ) ) {
             $controller_name = $routes[ 1 ];
@@ -55,7 +54,7 @@ class Router
          */
         $model_name = 'Model_' . $controller_name;
         $user = new User();
-        if ( FALSE == $user->userCookie() ) {
+        if ( false == $user->userCookie() ) {
             $controller_name = 'Controller_Login';
         } else {
             $controller_name = 'Controller_' . $controller_name;

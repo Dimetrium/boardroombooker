@@ -31,9 +31,9 @@ class User
         if ( !preg_match( "/^[a-zA-Z0-9]+$/", $this->login ) ) {
             $this->error[ ] = "Username can only consist of letters of the alphabet and numbers";
 
-            return FALSE;
+            return false;
         } else {
-            return TRUE;
+            return true;
         }
     }
 
@@ -45,9 +45,9 @@ class User
         if ( strlen( $this->login ) < 3 or strlen( $_POST[ 'employee_login' ] ) > 30 ) {
             $this->error[ ] = "Username must be at least 3 characters and no more than 30";
 
-            return FALSE;
+            return false;
         } else {
-            return TRUE;
+            return true;
         }
     }
 
@@ -64,13 +64,13 @@ class User
             WHERE employee_login = :employee_login;
 SQL;
         $data = $this->dbh->getRows( $query, array( 'employee_login' => $this->login ) );
-        $this->dbh = NULL;
+        $this->dbh = null;
         if ( $data > 0 ) {
             $this->error[ ] = "Members with such password already exist in the database";
 
-            return FALSE;
+            return false;
         } else {
-            return TRUE;
+            return true;
         }
     }
 
@@ -82,15 +82,17 @@ SQL;
      * @return string last Insert Id
      * @throws Exception
      */
-    public function userCheck (  )
+    public function userCheck ()
     {
-        if ( !FALSE == (
+        if ( !false == (
                 $this->checkLoginEmpty() ||
                 $this->checkLoginLength() ||
-                $this->checkUserExistName() )) {
+                $this->checkUserExistName() )
+        ) {
 
-                return true;
+            return true;
         }
+
         return false;
     }
 
@@ -111,7 +113,7 @@ SQL;
         //  Is password compare ...
         if ( $data[ 'employee_password' ] === $this->password ) {
             // ...generate a random hash,
-            $hash = md5( uniqid( rand(), TRUE ) );
+            $hash = md5( uniqid( rand(), true ) );
             // and write down a new hash of authorization in a DB
             $query = <<<SQL
                 UPDATE xyz_employee
@@ -121,17 +123,17 @@ SQL;
             $this->dbh->updateRow( $query, array(
                 'employee_id' => $data[ 'employee_id' ],
                 'employee_hash' => $hash ) );
-            $this->dbh = NULL;
+            $this->dbh = null;
             // Set cookies
             setcookie( "id", $data[ 'employee_id' ], time() + 60 * 60 * 24 * 30, BASE );
             setcookie( "hash", $hash, time() + 60 * 60 * 24 * 30 );
             setcookie( "name", $data[ 'employee_name' ], time() + 60 * 60 * 24 * 30, BASE );
 
-            return TRUE;
+            return true;
         } else {
             $this->error[ ] = "You have entered incorrect login or password";
 
-            return FALSE;
+            return false;
         }
     }
 
@@ -151,19 +153,21 @@ SQL;
                 LIMIT 1;
 SQL;
             $data = $this->dbh->getRow( $query, array( 'employee_id' => intval( $_COOKIE[ 'id' ] ) ) );
-            $this->dbh = NULL;
-            if ( ( $data[ 'employee_hash' ] !== $_COOKIE[ 'hash' ] )
-                or ( $data[ 'employee_id' ] !== $_COOKIE[ 'id' ] )
+            $this->dbh = null;
+            if ( ( $data[ 'employee_hash' ] !== $_COOKIE[ 'hash' ] ) ||
+                ( $data[ 'employee_id' ] !== $_COOKIE[ 'id' ] )
             ) {
-                setcookie( "id", "", time() - 3600 * 24 * 30 * 12, BASE );
-                setcookie( "hash", "", time() - 3600 * 24 * 30 * 12, BASE );
+                // /setcookie( "id", "", time() - 3600 * 24 * 30 * 12, BASE );
+                // setcookie( "hash", "", time() - 3600 * 24 * 30 * 12, BASE );
 
-                return FALSE;
+                //return FALSE;
             } else {
-                return TRUE;
+
+                return true;
             }
         } else {
-            return FALSE;
+
+            return false;
         }
     }
 
@@ -173,11 +177,11 @@ SQL;
             unset( $_COOKIE[ 'id' ] );
             unset( $_COOKIE[ 'hash' ] );
             unset( $_COOKIE[ 'name' ] );
-            setcookie( "id", NULL, time() - 3600 * 24 * 30 * 12, BASE );
-            setcookie( "hash", NULL, time() - 3600 * 24 * 30 * 12, BASE );
-            setcookie( "name", NULL, time() - 3600 * 24 * 30 * 12, BASE );
+            setcookie( "id", null, time() - 3600 * 24 * 30 * 12, BASE );
+            setcookie( "hash", null, time() - 3600 * 24 * 30 * 12, BASE );
+            setcookie( "name", null, time() - 3600 * 24 * 30 * 12, BASE );
         } else {
-            return FALSE;
+            return false;
         }
     }
 

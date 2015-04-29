@@ -72,20 +72,21 @@ SQL;
         $result = $this->dbh->getRows( $query, array(
             'id' => $id,
         ) );
-        $dbh = NULL;
+        $dbh = null;
         foreach ( $result as $key => $val ) {
             if ( !empty( $val[ 'app_start' ] ) || !empty( $val[ 'app_end' ] ) ) {
                 $time = date( 'H:i', $val[ 'app_start' ] ) . '-' . date( 'H:i', $val[ 'app_end' ] );
                 $eventDate = date( 'm/d/Y', $val[ 'app_start' ] );
             }
 
-            $event[ $val['appointment_id'] ] = [ $time => $eventDate ];
+            $event[ $val[ 'appointment_id' ] ] = [ $time => $eventDate ];
 
         }
+
         return $event;
     }
 
-    public function setDateToShow ( $month = NULL, $year = NULL )
+    public function setDateToShow ( $month = null, $year = null )
     {
         $this->month = $month;
         $this->year = $year;
@@ -96,9 +97,9 @@ SQL;
         if ( isset( $_POST[ 'month' ] ) && isset( $_POST[ 'year' ] ) ) {
             $month = $_POST[ 'month' ];
             $year = $_POST[ 'year' ];
-        } else if ( NULL !== $this->month ) {
+        } else if ( null !== $this->month ) {
             $month = $this->month;
-        } else if ( NULL == $this->year ) {
+        } else if ( null == $this->year ) {
             $year = $this->year;
         }
 

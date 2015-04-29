@@ -16,11 +16,11 @@ class Controller_Bookit extends Controller
     {
 
         $data = $this->model->getUsers();
-        $this->view->generate('bookit_view.php', 'template_view.php', $data);
+        $this->view->generate( 'bookit_view.php', 'template_view.php', $data );
 
     }
 
-    public function action_add()
+    public function action_add ()
     {
 
         return $this->model->addEvent();

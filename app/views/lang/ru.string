@@ -7,15 +7,15 @@
     </ISTRING>
     <ISTRING>
         <KEY>{{BOOK_IT}}</KEY>
-        <VALUE> Бронирование</VALUE>
+        <VALUE>Бронирование</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{BOARDROOMS}}</KEY>
-        <VALUE> Залы заседаний</VALUE>
+        <VALUE>Залы заседаний</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{EMPLOYEE_LIST}}</KEY>
-        <VALUE> Список сотрудников</VALUE>
+        <VALUE>Список сотрудников</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{ADD_NEW_EMPLOYEE}}</KEY>
@@ -27,7 +27,7 @@
     </ISTRING>
     <ISTRING>
         <KEY>{{LOGOUT}}</KEY>
-        <VALUE> Выйти</VALUE>
+        <VALUE>Выйти</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{EDIT}}</KEY>
@@ -135,7 +135,10 @@
     </ISTRING>
     <ISTRING>
         <KEY>{{Recurring_info}}</KEY>
-        <VALUE>Если еженедельно или каждые две недели, определите число недель для него, чтобы продолжать повторяться. Если ежемесячно, определите число месяцев. (Если Вы выберете "быть" и вставить нечетное число недели, то компьютер округлит в меньшую сторону.)</VALUE>
+        <VALUE>Если еженедельно или каждые две недели, определите число недель для него, чтобы продолжать повторяться.
+            Если ежемесячно, определите число месяцев. (Если Вы выберете "быть" и вставить нечетное число недели, то
+            компьютер округлит в меньшую сторону.)
+        </VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{Duration}}</KEY>

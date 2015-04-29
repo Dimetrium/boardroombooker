@@ -1,4 +1,4 @@
-<?php include 'header_view.php'?>
+<?php include 'header_view.php' ?>
 <div class="container">
     <div class="row">
         <div class="col-sm-offset-4 col-sm-4 col-md-offset-4 col-md-4">
@@ -137,15 +137,15 @@
 
                         <div class="controls">
                             <label class="radio" for="specRecurring-1">
-                                <input type="radio" name="specRecurring" value="1">
+                                <input type="radio" name="specRecurring" value="Weekly">
                                 {{Weekly}}
                             </label>
                             <label class="radio" for="specRecurring">
-                                <input type="radio" name="specRecurring" value="2">
+                                <input type="radio" name="specRecurring" value="Bi-weekly">
                                 {{Bi-weekly}}
                             </label>
                             <label class="radio" for="specRecurring">
-                                <input type="radio" name="specRecurring" value="3">
+                                <input type="radio" name="specRecurring" value="Monthly">
                                 {{Monthly}}
                             </label>
                         </div>
@@ -157,7 +157,7 @@
                         </label>
 
                         <div class="controls">
-                            <input type="text" class="form-control" name=""/>{{Duration}}
+                            <input type="text" class="form-control" name="duration"/>{{Duration}}
                         </div>
                     </div>
 

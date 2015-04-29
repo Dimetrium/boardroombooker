@@ -4,7 +4,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-toggle"></span>
             </button>
-                            
+
             <a class="navbar-brand" href="#">{{MAIN_H2}}</a>
         </div>
         <div class="navbar-collapse collapse">

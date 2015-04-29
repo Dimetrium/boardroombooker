@@ -7,12 +7,13 @@ class Controller_Login extends Controller
     {
         $user = new User();
         if ( ( isset( $_POST[ 'login' ] ) && isset( $_POST[ 'password' ] ) )
-            && ( TRUE == $user->userAuthorization() ) ) {
+            && ( true == $user->userAuthorization() )
+        ) {
 
-            header( 'Location:'.BASE);
+            header( 'Location:' . BASE );
 
         } else {
-            $this->view->generate('login_view.php', 'template_view.php');
+            $this->view->generate( 'login_view.php', 'template_view.php' );
         }
     }
 }

@@ -40,7 +40,7 @@ SQL;
         $result = $this->dbh->getRows( $query, array(
             'id' => $id,
         ) );
-        $dbh = NULL;
+        $dbh = null;
         foreach ( $result as $key => $val ) {
             if ( !empty( $val[ 'app_start' ] ) || !empty( $val[ 'app_end' ] ) ) {
                 $time = date( 'H:i', $val[ 'app_start' ] ) . '-' . date( 'H:i', $val[ 'app_end' ] );
@@ -54,7 +54,7 @@ SQL;
         return $event;
     }
 
-    public function setDateToShow ( $month = NULL, $year = NULL )
+    public function setDateToShow ( $month = null, $year = null )
     {
         $this->month = $month;
         $this->year = $year;
@@ -65,9 +65,9 @@ SQL;
         if ( isset( $_POST[ 'month' ] ) && isset( $_POST[ 'year' ] ) ) {
             $month = $_POST[ 'month' ];
             $year = $_POST[ 'year' ];
-        } else if ( NULL !== $this->month ) {
+        } else if ( null !== $this->month ) {
             $month = $this->month;
-        } else if ( NULL == $this->year ) {
+        } else if ( null == $this->year ) {
             $year = $this->year;
         }
 
@@ -87,13 +87,13 @@ SQL;
 SQL;
 
         $result = $this->dbh->getRows( $query );
-        $dbh = NULL;
+        $dbh = null;
 
         return $result;
 
     }
 
-    public function getUser ($employee_id)
+    public function getUser ( $employee_id )
     {
 
         $query = <<<SQL
@@ -105,7 +105,7 @@ SQL;
         $result = $this->dbh->getRow( $query, array(
             'employee_id' => $employee_id
         ) );
-        $dbh = NULL;
+        $dbh = null;
 
         return $result;
 
@@ -126,9 +126,9 @@ SQL;
             'employee_id' => $employee_id,
             'employee_email' => $employee_email ) );
         $lastInsId = $this->dbh->lastInsertedId();
-        $this->dbh = NULL;
-        if ( NULL !== $lastInsId ) {
-            return TRUE;
+        $this->dbh = null;
+        if ( null !== $lastInsId ) {
+            return true;
         }
 
     }
@@ -142,12 +142,12 @@ SQL;
 SQL;
         $this->dbh->insertRow( $query, array( 'employee_id' => $employee_id ) );
         $lastInsId = $this->dbh->lastInsertedId();
-        $this->dbh = NULL;
-        if ( NULL !== $lastInsId ) {
-            return TRUE;
+        $this->dbh = null;
+        if ( null !== $lastInsId ) {
+            return true;
         }
 
-        return FALSE;
+        return false;
 
     }
 
@@ -178,12 +178,12 @@ SQL;
             'employee_email' => $email,
             'role_id' => $role_id ) );
         $lastInsId = $this->dbh->lastInsertedId();
-        $this->dbh = NULL;
-        if ( NULL !== $lastInsId ) {
-            return TRUE;
+        $this->dbh = null;
+        if ( null !== $lastInsId ) {
+            return true;
         }
 
-        return FALSE;
+        return false;
     }
 
 }

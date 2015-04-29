@@ -2,7 +2,7 @@ function DoPost(id) {
     $.post("main", {id_room: id});  //Your values here..
 }
 function myFunction(id) {
-    window. open("details/"+id, "_blank", "toolbar=no, location=no, scrollbars=yes, resizable=yes, top=500, left=500, width=600, height=400");
+    window.open("details/" + id, "_blank", "toolbar=no, location=no, scrollbars=yes, resizable=yes, top=500, left=500, width=600, height=400");
 }
 
 //function myFunction() {
@@ -14,9 +14,9 @@ $('.collapse').on('show.bs.collapse', function () {
 });
 
 jQuery(document).ready(function () {
-        $("html, body").animate({scrollTop: $("#scrol").offset().top}, 700);
-        console.log('executed scrollToElement');
-        return true;
-    });
+    $("html, body").animate({scrollTop: $("#scrol").offset().top}, 700);
+    console.log('executed scrollToElement');
+    return true;
+});
 
 

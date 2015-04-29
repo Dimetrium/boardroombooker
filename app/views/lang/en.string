@@ -7,15 +7,15 @@
     </ISTRING>
     <ISTRING>
         <KEY>{{BOOK_IT}}</KEY>
-        <VALUE> Book It!</VALUE>
+        <VALUE>Book It!</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{BOARDROOMS}}</KEY>
-        <VALUE> Boardrooms</VALUE>
+        <VALUE>Boardrooms</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{EMPLOYEE_LIST}}</KEY>
-        <VALUE> Employee List</VALUE>
+        <VALUE>Employee List</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{ADD_NEW_EMPLOYEE}}</KEY>
@@ -27,7 +27,7 @@
     </ISTRING>
     <ISTRING>
         <KEY>{{LOGOUT}}</KEY>
-        <VALUE> Logout</VALUE>
+        <VALUE>Logout</VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{EDIT}}</KEY>
@@ -139,7 +139,10 @@
     </ISTRING>
     <ISTRING>
         <KEY>{{Recurring_info}}</KEY>
-        <VALUE>If weekly or bi-weekly, specify the number of weeks for it to keep recurring. If monthly, specify the number of months. (If you choose "be-weekly" and put in an odd number of week, the computer will round down.)</VALUE>
+        <VALUE>If weekly or bi-weekly, specify the number of weeks for it to keep recurring. If monthly, specify the
+            number of months. (If you choose "be-weekly" and put in an odd number of week, the computer will round
+            down.)
+        </VALUE>
     </ISTRING>
     <ISTRING>
         <KEY>{{Duration}}</KEY>

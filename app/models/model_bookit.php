@@ -5,7 +5,22 @@ class Model_Bookit extends Model
 
     public function addEvent ()
     {
+        if ( true == $_POST[ 'isRecurring' ] ) {
+            switch ( $_POST[ 'specRecurring' ] ) {
+                case "Weekly":
+                    var_dump($_POST['duration']);
+                    break;
+                case "Bi-weekly":
+                    echo "Your favorite color is blue!";
+                    break;
+                case "Monthly":
+                    echo "Your favorite color is green!";
+                    break;
 
+            }
+            var_dump( $_POST );
+        }
+        exit;
         $start_date = $_POST[ 'date' ] . ' ' . $_POST[ 'start' ] . ':00';
         $end_date = $_POST[ 'date' ] . ' ' . $_POST[ 'end' ] . ':00';
         $employee_id = $_POST[ 'employee_id' ];
@@ -43,7 +58,7 @@ SQL;
             FROM xyz_employee;
 SQL;
         $data = $this->dbh->getRows( $query );
-        $this->dbh = NULL;
+        $this->dbh = null;
 
         return $data;
 

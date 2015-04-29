@@ -23,7 +23,7 @@
                                     <input name="remember" type="checkbox" value="Remember Me">Remember Me
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-sm btn-success">{{Login}}</button>
+                            <button type="submit" class="btn btn-sm btn-success">{{LOGIN}}</button>
                         </fieldset>
                     </form>
                 </div>
