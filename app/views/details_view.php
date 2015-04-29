@@ -16,11 +16,11 @@
                         <label for="start" class="control-label">When:</label>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="start" placeholder="07:30">
+                    <input type="text" class="form-control" name="start" placeholder="<?=$app_start?>">
                     </div>
                     <div class="col-md-1"><p>&mdash;</p></div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="end" placeholder="09:30">
+                        <input type="text" class="form-control" name="end" placeholder="<?=$app_end?>">
                     </div>
                 </div>
 
@@ -29,7 +29,7 @@
                         <label for="notes" class="control-label">Notes</label>
                     </div>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" id="notes" placeholder="Management Meeting">
+                    <input type="text" class="form-control" name="notes" placeholder="<?=$description?>">
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@
                         <label for="who" class="control-label">Who:</label>
                     </div>
                     <div class="dropdown col-md-10">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="who" data-toggle="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" name="who" data-toggle="dropdown">
                             John Smith
                             <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="who">
