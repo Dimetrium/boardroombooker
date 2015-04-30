@@ -69,12 +69,13 @@ class View
 
         // Details part
         if ( isset( $data[ 'appointment_id' ] ) ) {
-
-            $app_start = $data[ 'app_start' ];
-            $app_end = $data[ 'app_end' ];
+      
+            $app_start = date('H:i', $data[ 'app_start' ]);
+            $app_end = date('H:i', $data[ 'app_end' ]);
+            $date = date('m/d/Y', $data[ 'app_end' ]);
             $description = $data[ 'description' ];
             $appointment_id = $data[ 'appointment_id' ];
-//            var_dump($data);
+
             $users = '';
             foreach ( $data[ 'users' ] as $key => $val ) {
                 if ( $data[ 'employee_id' ] == $val[ 'employee_id' ] ) {

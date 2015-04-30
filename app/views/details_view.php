@@ -12,16 +12,17 @@
         <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
             <form class="form-horizontal" method="POST" id="details">
 
+                        <input type="hidden" class="form-control" name="date" value="<?= $date ?>">
                 <div class="form-group">
                     <div class="col-sm-2 col-md-2">
                         <label for="start" class="control-label">When:</label>
                     </div>
                     <div class="col-sm-4 col-md-4">
-                        <input type="text" class="form-control" name="start" value="<?= $app_start ?>"">
+                        <input type="text" class="form-control" name="start" value="<?= $app_start ?>">
                     </div>
                     <div class="col-sm-1 col-md-1"><p>&mdash;</p></div>
                     <div class="col-sm-4 col-md-4">
-                        <input type="text" class="form-control" name="end" value="<?= $app_end ?>"">
+                        <input type="text" class="form-control" name="end" value="<?= $app_end ?>">
                     </div>
                 </div>
 

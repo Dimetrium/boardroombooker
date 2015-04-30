@@ -14,10 +14,6 @@ SQL;
         $result = $this->dbh->getRow( $query, array(
             'id' => $id ) );
 
-        $result[ 'app_start' ] = date( 'H:i', $result[ 'app_start' ] );
-        $result[ 'app_end' ] = date( 'H:i', $result[ 'app_end' ] );
-
-
         $query = <<<SQL
             SELECT employee_name, employee_id, employee_email
             FROM xyz_employee
@@ -53,11 +49,10 @@ SQL;
     {
 
         $appointment_id = $_POST[ 'update' ];
-        $app_start = strtotime( $_POST[ 'start' ] );
-        $app_end = strtotime( $_POST[ 'end' ] );
+        $app_start = strtotime( $_POST['date'] . $_POST[ 'start' ] );
+        $app_end = strtotime( $_POST['date'] . $_POST[ 'end' ] );
         $description = $_POST[ 'notes' ];
         $employee_id = $_POST[ 'employee_id' ];
-
         $query =
             <<<SQL
             UPDATE xyz_appointments
