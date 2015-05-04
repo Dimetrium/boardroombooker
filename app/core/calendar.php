@@ -145,7 +145,6 @@ class Calendar
                 foreach ( $dHtml_arr as $id => $dHtml ) {
                     $out .= '<div class="event">';
                     $out .= '<a href="details/show/' . $id . '">';
-                    //$out .= '<a href="#" onclick="myFunction('.$id.')">';
                     $out .= $dHtml . '</a></div>';
                 }
             }
